@@ -26,7 +26,7 @@ body {
 }
 
 .left-column .header {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -45,6 +45,27 @@ body {
     text-align: left; /* 文本左对齐 */
     margin-top: auto; /* 推到左下角 */
     line-height: 1.2; /* 行间距 */
+}
+
+.left-column .links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.6em; /* Increase font size for better visibility */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Add spacing between letters */
+    line-height: 1.5
+}
+.left-column .links a {
+    color: #333; /* White text color */
+    text-decoration: none; /* Remove default underline */
+    border-bottom: 1px solid #333; /* Add underline with padding */
+    padding-bottom: 2px; /* Padding below the text */
+}
+.left-column .links a:hover {
+    color: #555;
+    border-bottom-color: #555;
+    border-bottom: none; /* 移除下划线 */
 }
 
 .left-column .footer .right-align {
@@ -125,9 +146,8 @@ body {
     flex-wrap: wrap; /* 当内容过长时自动换行 */
 }
 
-
 /* 手机端（小于768px屏幕宽度）的自定义样式 */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 840px) {
     /* 针对手机的样式设置 */
     .left-column {
         width: 0%;
