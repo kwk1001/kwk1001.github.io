@@ -16,7 +16,7 @@ body {
 
 /* 左侧栏样式 */
 .left-column {
-    width: 25%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,8 +61,8 @@ body {
 
 /* 右侧栏样式 */
 .right-column {
-    margin-left: 25%;
-    width: 75%;
+    margin-left: 20%;
+    width: 80%;
     padding: 50px; /* 增加内边距 */
     overflow-y: scroll;
     height: 100vh;
@@ -80,43 +80,78 @@ body {
 }
 
 .right-column p {
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-bottom: 5px;
+    line-height: 1.5;
     color: #555;
 }
 
-/* 添加教育部分样式 */
-.education-section {
-    margin-bottom: 0px; /* 与其他内容的间距 */
-    color: #555;
+.cv-content .left-col{
+    width: 15%; /* 左侧列占30%的宽度 */
+    text-align: right; /* 内容靠右对齐 */
+    color: #555; /* 字体颜色为灰色 */
+    font-size: 1em; /* 字体大小 */
+    margin-right: 15px; /* 向左移动，使其位于分割线之外 */
 }
 
-.education-section p {
-    margin-top: 10px;  /* 段落顶部的外边距 */
-    margin-bottom: 10px; /* 每个段落之间的距离 */
-    line-height: 1; /* 行高 */
-}
-.education-section h4 {
-    margin-top: 15px;  /* 段落顶部的外边距 */
-    margin-bottom: 15px; /* 每个段落之间的距离 */
-    line-height: 1; /* 行高 */
-}
-.education-section .date {
-    float: right; /* 将日期靠右对齐 */
-    color: #555; /* 日期文字颜色 */
-    font-style: italic; /* 日期文字样式 */
-}
-.education-section .link {
-    float: right; /* 将日期靠右对齐 */
+.cv-content .right-col{
+    width: 80%; /* 左侧列占30%的宽度 */
+    margin-left: 0px; /* 向左移动，使其位于分割线之外 */
 }
 
-.education-section a {
+.cv-content a {
     color: #007acc; /* 链接颜色 */
     text-decoration: none; /* 移除下划线 */
+    word-break: break-all;
 }
 
-.education-section a:hover {
+.cv-content a:hover {
     text-decoration: underline; /* 鼠标悬停时显示下划线 */
 }
 
+.cv-content .row{
+    display: flex; /* 使用Flexbox创建左右两列 */
+    margin-bottom: 5px; /* 每行之间的间距 */
+    flex-wrap: wrap; /* 当内容过长时自动换行 */
+}
 
+.cv-content .row2{
+    display: flex; /* 使用Flexbox创建左右两列 */
+    margin-bottom: 5px; /* 每行之间的间距 */
+    flex-wrap: wrap; /* 当内容过长时自动换行 */
+}
+.cv-content .row3{
+    display: flex; /* 使用Flexbox创建左右两列 */
+    margin-bottom: 5px; /* 每行之间的间距 */
+    flex-wrap: wrap; /* 当内容过长时自动换行 */
+}
+
+
+/* 手机端（小于768px屏幕宽度）的自定义样式 */
+@media only screen and (max-width: 768px) {
+    /* 针对手机的样式设置 */
+    .left-column {
+        width: 0%;
+        display: none;
+    }
+    
+    .right-column {
+        margin-left: 0%;
+        width: 100%;
+        padding: 50px; /* 增加内边距 */
+        overflow-y: scroll;
+        height: 100vh;
+    }
+
+    .cv-content .left-col{
+        width: 100%; /* 左侧列占30%的宽度 */
+        text-align: left; /* 内容靠右对齐 */
+        color: #555; /* 字体颜色为灰色 */
+        font-size: 1em; /* 字体大小 */
+        margin-right: 15px; /* 向左移动，使其位于分割线之外 */
+    }
+    
+    .cv-content .right-col{
+        width: 100%; /* 左侧列占30%的宽度 */
+        margin-left: 0px; /* 向左移动，使其位于分割线之外 */
+    }
+}
