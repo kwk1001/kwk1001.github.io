@@ -111,7 +111,16 @@ body {
     color: #555;
 }
 
-.cv-content .left-col{
+.fade-row {
+    opacity: 0; /* 默认透明 */
+    transition: opacity 1s ease-in-out; /* 渐变效果 */
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+ .left-col{
     width: 15%; /* 左侧列占30%的宽度 */
     text-align: right; /* 内容靠右对齐 */
     color: #555; /* 字体颜色为灰色 */

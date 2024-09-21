@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Scroll Project Showcase</title>
-    <link rel="stylesheet" href="/projects/styles.css">
+    <title>Weikang Kong</title>
+    <link rel="stylesheet" href="/projects/styles.css?v=<?php echo time(); ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="scrolling-container">
-            <div class="scrolling-text" id="scrolling-text">
-                <div class="text-item" data-project="Project 1">Landscape</div>
-                <div class="text-item" data-project="Project 2">Abstract</div>
-                <div class="text-item" data-project="Project 3">Parachute</div>
-                <div class="text-item" data-project="Project 4">Blue</div>
-                <div class="text-item" data-project="Project 5">Sunset</div>
-                <!-- More items can be added here -->
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="tit"><a href="index.html">Weikang&nbsp;Kong</a></div>
+            <div class="header">
+                <p><br></p>
+                <p class="links"><a href="index.html">Home</a></p>
+                <p class="links"><a href="cv.html">CV</a></p>
+                <p class="links"><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
+                <p class="links"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
+            </div>
+            <div class="footer">
+                <br>
+                <p>
+                    <span class="right-align">Projects</span><br>
+                </p>
             </div>
         </div>
-    </div>
-    <div class="description-panel" id="description-panel">
-        <div class="description-content" id="description-content">
-            <!-- Project descriptions will be loaded here -->
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="scrolling-titles" id="scrolling-titles">
+                <div class="title" onclick="showDetails('project1')">项目标题 1</div>
+                <div class="title" onclick="showDetails('project2')">项目标题 2</div>
+                <div class="title" onclick="showDetails('project3')">项目标题 3</div>
+            </div>
+            <div class="details" id="details">
+                <button onclick="hideDetails()">返回目录</button>
+                <div id="project1" class="project-content">
+                    <img src="image1.jpg" alt="项目 1 图片">
+                    <p>项目 1 的详细介绍...</p>
+                </div>
+                <div id="project2" class="project-content">
+                    <img src="image2.jpg" alt="项目 2 图片">
+                    <p>项目 2 的详细介绍...</p>
+                </div>
+                <div id="project3" class="project-content">
+                    <img src="image3.jpg" alt="项目 3 图片">
+                    <p>项目 3 的详细介绍...</p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="/projects/script.js"></script>
