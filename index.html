@@ -34,6 +34,11 @@
         }
         .title {
             font-size: 2em;
+            margin-bottom: 5px;
+        }
+        .title2 {
+            font-size: 1.5em;
+            margin-top: 0; /* 调整顶部外边距，减小距离 */
         }
         .description {
             line-height: 1.3;
@@ -53,13 +58,14 @@
             padding-bottom: 2px; /* Padding below the text */
         }
         .links a:hover {
-            color: #f0f0f0; /* Slight color change on hover */
-            border-bottom-color: #f0f0f0; /* Change underline color on hover */
+            color: #f0f0f0;
+            border-bottom-color: #f0f0f0;
+            border-bottom: none; /* 移除下划线 */
         }
         .cover {
             position: relative;
             min-height: 100vh;
-            background: url('/index/assets/kwk1001.PNG') no-repeat center center/cover;
+            background: url('/index/assets/kwk1001(2).jpg') no-repeat center center/cover;
         }
         .cover p {
             position: absolute;
@@ -74,16 +80,17 @@
         <div class="column left-column">
             <div class="spacer"></div>
             <div>
-                <h1 class="title">Weikang Kong.</h1>
+                <h1 class="title">Weikang Kong</h1>
+                <!-- <h1 class="title2">孔维康</h1> -->
                 <p class="description">I am a fourth-year undergraduate student majoring in Urban Planning, looking forward to applying for a master's degree in
                     2024 fall and devoting myself to urban studies in the future. I have a solid foundation in mathematics and programming and
                     a keen interest in conducting research and analysis related to various urban issues.</p>
             </div>
             <div class="links">
-                <p><a href="#">Get in Touch</a></p>
-                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Projects</a></p>
+                <p><a href="#">CV</a></p>
                 <p><a href="https://github.com/kwk1001">GitHub</a></p>
-                <p><a href="#">YouTube</a></p>
+                <p><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
             </div>
         </div>
         <div class="column right-column">
