@@ -26,7 +26,7 @@ body {
 }
 
 .left-column .header {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -125,9 +125,8 @@ body {
     flex-wrap: wrap; /* 当内容过长时自动换行 */
 }
 
-
 /* 手机端（小于768px屏幕宽度）的自定义样式 */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 840px) {
     /* 针对手机的样式设置 */
     .left-column {
         width: 0%;
