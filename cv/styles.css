@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eee8d7; /* 设置整个页面背景颜色 */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 左侧栏样式 */
+.left-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    position: fixed;
+    height: 100vh;
+}
+
+.left-column .header {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.left-column .header a {
+    text-decoration: none;
+    color: #333;
+}
+
+.left-column .footer {
+    font-size: 1.5em; /* 设置大字体 */
+    font-weight: 400; /* 字体加粗 */
+    color: #333; /* 字体颜色 */
+    text-transform: uppercase; /* 大写字母 */
+    letter-spacing: 2px; /* 字符间距 */
+    text-align: left; /* 文本左对齐 */
+    margin-top: auto; /* 推到左下角 */
+    line-height: 1.2; /* 行间距 */
+}
+
+.left-column .footer .right-align {
+    align-self: flex-end; /* 自身右对齐 */
+    width: 50%; /* 占满父元素宽度 */
+    text-align: right; /* 文字右对齐 */
+}
+
+.left-column .footer .left-align {
+    align-self: flex-start; /* 自身左对齐 */
+    width: 100%; /* 占满父元素宽度 */
+    text-align: left; /* 文字左对齐 */
+}
+
+/* 右侧栏样式 */
+.right-column {
+    margin-left: 25%;
+    width: 75%;
+    padding: 50px; /* 增加内边距 */
+    overflow-y: scroll;
+    height: 100vh;
+}
+.right-column .cv-content {
+    padding: 0px;
+}
+
+.right-column h3 {
+    margin-bottom: 5px;
+    padding-bottom: 5px; /* 增加内边距，使底部边框和文本有间距 */
+    border-bottom: 2px solid #333; /* 设置底部边框样式、粗细和颜色 */
+    font-size: 2em; /* 标题字体大小 */
+    color: #333;
+}
+
+.right-column p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 添加教育部分样式 */
+.education-section {
+    margin-bottom: 0px; /* 与其他内容的间距 */
+    color: #555;
+}
+
+.education-section p {
+    margin-top: 10px;  /* 段落顶部的外边距 */
+    margin-bottom: 10px; /* 每个段落之间的距离 */
+    line-height: 1; /* 行高 */
+}
+.education-section h4 {
+    margin-top: 15px;  /* 段落顶部的外边距 */
+    margin-bottom: 15px; /* 每个段落之间的距离 */
+    line-height: 1; /* 行高 */
+}
+.education-section .date {
+    float: right; /* 将日期靠右对齐 */
+    color: #555; /* 日期文字颜色 */
+    font-style: italic; /* 日期文字样式 */
+}
+.education-section .link {
+    float: right; /* 将日期靠右对齐 */
+}
+
+.education-section a {
+    color: #007acc; /* 链接颜色 */
+    text-decoration: none; /* 移除下划线 */
+}
+
+.education-section a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+
