@@ -25,13 +25,18 @@ body {
     height: 100vh;
 }
 
-.left-column .header {
-    font-size: 1.5em;
+.left-column .tit a{
+    font-size: 1.8em;
     font-weight: 600;
-    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    flex-wrap: wrap
 }
 
-.left-column .header a {
+.left-column .header a{
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 0px;
     text-decoration: none;
     color: #333;
 }
