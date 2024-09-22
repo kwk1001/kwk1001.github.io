@@ -17,13 +17,13 @@ body {
 }
 
 .cursor {
+    width: 12px; /* 设定圆形直径 */
+    height: 12px;
+    border-radius: 50%;
     position: absolute;
-    width: 10px; /* 光标宽度 */
-    height: 10px; /* 光标高度 */
-    background-color: rgba(0, 0, 0, 0.8); /* 光标颜色 */
-    border-radius: 50%; /* 圆形 */
-    pointer-events: none; /* 不影响鼠标事件 */
-    transform: translate(-50%, -50%); /* 居中 */
+    pointer-events: none; /* 确保不阻止其他元素的点击 */
+    background-color: rgba(0, 0, 0, 0.7); /* 初始颜色 */
+    transition: background-color 0.2s; /* 平滑变色 */
 }
 
 a {

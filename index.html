@@ -11,6 +11,7 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            cursor: none;
         }
         h1 {
             font-family: 'Poppins', sans-serif;
@@ -24,6 +25,24 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 300;
         }
+
+        .cursor {
+            width: 12px; /* 设定圆形直径 */
+            height: 12px;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none; /* 确保不阻止其他元素的点击 */
+            background-color: rgba(255, 255, 255, 0.7); /* 初始颜色 */
+            transition: background-color 0.2s; /* 平滑变色 */
+            z-index: 9999;
+        }
+        a {
+            cursor: none;
+        }
+        a:hover {
+            cursor: none;
+        }
+
         .container {
             display: flex;
         }
@@ -109,7 +128,21 @@
         }
     </style>
 </head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+
+    });
+</script>
+
 <body>
+    <div id="cursor" class="cursor"></div>
     <div class="container">
         <div class="column left-column">
             <div class="spacer"></div>
