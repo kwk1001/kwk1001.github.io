@@ -133,11 +133,6 @@
                 color: #ffffff;
                 height: 100vh;
             }
-            .cursor {
-                width: 0px; /* 设定圆形直径 */
-                height: 0px;    
-                display: none;
-            }
         }
     </style>
 </head>
@@ -151,6 +146,14 @@
             cursor.style.top = e.pageY + 'px';
         });
 
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        if (isMobileDevice()) {
+            const cursor = document.getElementById('cursor');
+            cursor.style.display = 'none'; // 隐藏光标
+        }
     });
 </script>
 

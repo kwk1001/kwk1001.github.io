@@ -38,7 +38,15 @@
             cursor.style.left = e.pageX + 'px';
             cursor.style.top = e.pageY + 'px';
         });
+        
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
 
+        if (isMobileDevice()) {
+            const cursor = document.getElementById('cursor');
+            cursor.style.display = 'none'; // 隐藏光标
+        }
     });
 </script>
 <body>
