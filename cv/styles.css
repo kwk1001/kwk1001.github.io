@@ -208,4 +208,7 @@ a:hover {
         width: 100%; /* 左侧列占30%的宽度 */
         margin-left: 0px; /* 向左移动，使其位于分割线之外 */
     }
+    .cursor {
+        display: none;
+    }
 }
