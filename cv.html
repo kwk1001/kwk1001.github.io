@@ -23,22 +23,39 @@
         rows.forEach(row => {
             observer.observe(row);
         });
+
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cursor.style.display = 'none';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursor.style.display = 'block';
+        });
+
     });
 </script>
 <body>
+    <div class="cursor" id="cursor"></div>
     <div class="container">
         <!-- Left Column -->
         <div class="left-column">
             <div class="tit"><a href="index.html">Weikang&nbsp;Kong</a></div>
             <div class="header">
                 <p><br></p>
-                <p class="links"><a href="index.html">Home</a></p>
-                <p class="links"><a href="projects.html">Projects</a></p>
-                <p class="links"><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
-                <p class="links"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
+                <p class="links fade-row"><a href="index.html">Home</a></p>
+                <p class="links fade-row"><a href="projects.html">Projects</a></p>
+                <p class="links fade-row"><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
+                <p class="links fade-row"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
             </div>
             <div class="footer">
-                <p class="links"><a href="cv/CV-WeikangKong.pdf" target="_blank">Download PDF</a></p>
+                <p class="links fade-row"><a href="cv/CV-WeikangKong.pdf" target="_blank">Download PDF</a></p>
                 <br>
                 <p>
                     <span class="right-align">Curriculum</span><br>

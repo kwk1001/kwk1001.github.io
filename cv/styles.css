@@ -7,11 +7,31 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
+    cursor: none; /* 隐藏原始鼠标光标 */
 }
 
 .container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
+}
+
+.cursor {
+    position: absolute;
+    width: 10px; /* 光标宽度 */
+    height: 10px; /* 光标高度 */
+    background-color: rgba(0, 0, 0, 0.8); /* 光标颜色 */
+    border-radius: 50%; /* 圆形 */
+    pointer-events: none; /* 不影响鼠标事件 */
+    transform: translate(-50%, -50%); /* 居中 */
+}
+
+a {
+    cursor: none;
+}
+
+a:hover {
+    cursor: none;
 }
 
 /* 左侧栏样式 */
