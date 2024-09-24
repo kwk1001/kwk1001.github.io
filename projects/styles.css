@@ -165,7 +165,7 @@ a:hover {
     justify-content: space-between;
     padding: 50px;
     position: fixed;
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 .left-column .tit a{
