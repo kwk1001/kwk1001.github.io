@@ -92,13 +92,14 @@ function animate() {
     }
 }
 
-function setFullHeight() {
-    const fullHeight = window.innerHeight; // 获取可视区域的高度
-    document.documentElement.style.height = fullHeight + 'px'; // 设置文档高度
+function setVhCssVar() {
+	const vh = window.innerHeight * 0.01;
+	// 创建全局变量 --vh
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-window.addEventListener('load', setFullHeight);
-window.addEventListener('resize', setFullHeight);
+setVhCssVar();
+window.addEventListener('resize', setVhCssVar);
 
 window.onload = function() {
     animationStartTime = performance.now();
