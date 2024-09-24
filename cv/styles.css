@@ -8,7 +8,7 @@
     --color-primary: rgb(206, 8, 8);
 }
 
-body {
+html, body {
     font-family: 'Poppins', sans-serif;
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
     cursor: none; /* 隐藏原始鼠标光标 */
@@ -163,7 +163,7 @@ a:hover {
     justify-content: space-between;
     padding: 50px;
     position: fixed;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .left-column .tit a{
@@ -232,7 +232,7 @@ a:hover {
     width: 80%;
     padding: 50px; /* 增加内边距 */
     overflow-y: scroll;
-    height: 100vh;
+    height: 100dvh;
 }
 .right-column .cv-content {
     padding: 0px;
@@ -314,7 +314,7 @@ a:hover {
         width: 100%;
         padding: 50px; /* 增加内边距 */
         overflow-y: scroll;
-        height: 100vh;
+        height: 100dvh;
     }
 
     .cv-content .left-col{
