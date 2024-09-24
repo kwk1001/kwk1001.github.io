@@ -210,9 +210,16 @@ body {
     margin-left: 20%;
     width: 80%;
     padding: 50px; /* 增加内边距 */
-    overflow-y: scroll;
-    height: 100vh;
+    min-height: 100dvh;
+    overflow-y: scroll; /* 允许滚动 */
+    -ms-overflow-style: none; /* 适用于 Internet Explorer 和 Edge */
+    scrollbar-width: none; /* 隐藏 Firefox 浏览器的滚动条 */
 }
+
+.right-column::-webkit-scrollbar {
+    display: none;
+}
+
 .right-column .cv-content {
     padding: 0px;
 }
