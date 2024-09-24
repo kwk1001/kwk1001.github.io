@@ -83,7 +83,7 @@ function animate() {
         wrap.style.transform = `translate(0%, 0%)`;
     } else if (elapsedTime > 1.4 && elapsedTime <= 2.0) {
         const t = ease((elapsedTime - 1.4) / 0.6, translateYWrapFactor);
-        const translateYWrap = -100 * easeInOut(t); // 从0转变为-70
+        const translateYWrap = -105 * easeInOut(t); // 从0转变为-70
         wrap.style.transform = `translate(0%, ${translateYWrap}%)`;
     }
 

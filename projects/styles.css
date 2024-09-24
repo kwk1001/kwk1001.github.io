@@ -1,5 +1,6 @@
 :root {
     --color-primary: rgb(206, 8, 8);
+    --color-cornor: #999;
 }
 
 * {
@@ -11,11 +12,33 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
+    cursor: none; /* 隐藏原始鼠标光标 */
+    min-height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.cursor {
+    width: 12px; /* 设定圆形直径 */
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /* 确保不阻止其他元素的点击 */
+    background-color: rgba(0, 0, 0, 0.7); /* 初始颜色 */
+    transition: background-color 0.2s; /* 平滑变色 */
+}
+
+a {
+    cursor: none;
+}
+
+a:hover {
+    cursor: none;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .shape-round {
@@ -142,7 +165,7 @@ body {
     justify-content: space-between;
     padding: 50px;
     position: fixed;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .left-column .tit a{
@@ -225,7 +248,7 @@ body {
 }
 
 .right-column h3 {
-    margin-bottom: 5px;
+    margin-bottom: 30px;
     padding-bottom: 5px; /* 增加内边距，使底部边框和文本有间距 */
     border-bottom: 2px solid #333; /* 设置底部边框样式、粗细和颜色 */
     font-size: 2em; /* 标题字体大小 */
@@ -238,53 +261,82 @@ body {
     color: #555;
 }
 
-.scrolling-titles {
-    height: 100%;
-    overflow-y: scroll;
-    position: absolute;
-    top: 0;
+.fade-row {
+    opacity: 0; /* 默认透明 */
+    transition: opacity 1s ease-in-out; /* 渐变效果 */
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.project-list {
+    margin: 0px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 改为从左到右排列项目 */
+    gap: 15px; /* 添加间距代替 margin */
+}
+
+.project {
+    width: calc(33% - 15px); /* 减去项目间距 */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.image-container {
+    position: relative;
+    padding: 12px; /* 用于给角的直角形状提供空间 */
+}
+
+.image-frame {
+    position: relative;
     width: 100%;
+    padding-top: 56.25%; /* 16:9 比例 */
+    background-size: cover;
+    background-position: center;
 }
 
-.title {
-    font-size: 30px;
-    margin: 20px;
-    transition: font-size 0.3s, color 0.3s;
-}
-
-.title.active {
-    font-size: 40px;
-    color: yellow;
-}
-
-.title.inactive {
-    font-size: 20px;
-    color: gray;
-}
-
-.details {
+.corners .corner {
     position: absolute;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
-    background: white;
-    overflow-y: auto;
-    transition: right 0.3s;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    width: 25px;
+    height: 25px;
 }
 
-.details.active {
-    right: 0;
+.caption {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 18px;
+    color: white;
+    padding: 12px;
 }
 
-.project-content {
-    display: none;
+.caption a{
+    color: white;
+    text-decoration: none;
 }
 
-.project-content.active {
-    display: block;
+.caption a:hover, h4:hover
+{
+    color: white;
+    text-decoration: underline; /* 给所有行加下划线 */
+    text-decoration-skip-ink: none; /* 确保下划线完整 */
+}
+
+.caption .date {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.caption h4 {
+    font-size: 1.4vw;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0px 0;
 }
 
 /* 手机端（小于768px屏幕宽度）的自定义样式 */
@@ -301,5 +353,16 @@ body {
         padding: 50px; /* 增加内边距 */
         overflow-y: scroll;
         height: 100vh;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .caption h4 {
+        font-size: 2.4vh;
+        font-weight: 600;
+        line-height: 1.1;
+        margin: 0px 0;
     }
 }

@@ -13,6 +13,8 @@ body {
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
     cursor: none; /* 隐藏原始鼠标光标 */
     min-height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
