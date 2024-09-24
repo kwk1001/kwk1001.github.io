@@ -91,17 +91,3 @@ function animate() {
         requestAnimationFrame(animate);
     }
 }
-
-function setVhCssVar() {
-	const vh = window.innerHeight * 0.01;
-	// 创建全局变量 --vh
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-setVhCssVar();
-window.addEventListener('resize', setVhCssVar);
-
-window.onload = function() {
-    animationStartTime = performance.now();
-    animate();
-};
