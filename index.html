@@ -20,6 +20,7 @@
             margin: 0;
             padding: 0;
             cursor: none;
+            overflow: hidden;
         }
         h1 {
             font-family: 'Poppins', sans-serif;
@@ -35,13 +36,13 @@
         }
 
         .cursor {
-            width: 12px; /* 设定圆形直径 */
+            width: 12px;
             height: 12px;
             border-radius: 50%;
             position: absolute;
-            pointer-events: none; /* 确保不阻止其他元素的点击 */
-            background-color: rgba(255, 255, 255, 0.7); /* 初始颜色 */
-            transition: background-color 0.2s; /* 平滑变色 */
+            pointer-events: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: background-color 0.2s;
             z-index: 9999;
         }
         a {
@@ -121,6 +122,15 @@
             font-size: 14px;
         }
 
+        .fade-row {
+            opacity: 0; /* 默认透明 */
+            transition: opacity 1s ease-in-out; /* 渐变效果 */
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
         @media only screen and (max-width: 840px) {
             /* 针对手机的样式设置 */
             .right-column {
@@ -139,6 +149,21 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const rows = document.querySelectorAll('.fade-row');
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target); // 只执行一次
+                }
+            });
+        });
+        
+        rows.forEach(row => {
+            observer.observe(row);
+        });
+
         const cursor = document.getElementById('cursor');
 
         document.addEventListener('mousemove', (e) => {
@@ -163,13 +188,13 @@
         <div class="column left-column">
             <div class="spacer"></div>
             <div>
-                <h1 class="title">Weikang Kong</h1>
+                <h1 class="title fade-row">Weikang Kong</h1>
                 <!-- <h1 class="title2">孔维康</h1> -->
-                <p class="description">I am a fourth-year undergraduate student majoring in Urban Planning, looking forward to applying for a master's degree in
+                <p class="description fade-row">I am a fourth-year undergraduate student majoring in Urban Planning, looking forward to applying for a master's degree in
                     2024 fall and devoting myself to urban studies in the future. I have a solid foundation in mathematics and programming and
                     a keen interest in conducting research and analysis related to various urban issues.</p>
             </div>
-            <div class="links">
+            <div class="links fade-row">
                 <p><a href="projects.html">Projects</a></p>
                 <p><a href="cv.html">CV</a></p>
                 <p><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
