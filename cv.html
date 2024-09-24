@@ -52,10 +52,11 @@
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         }
-
+        
         setVhCssVar();
         window.addEventListener('resize', setVhCssVar);
     });
+
     window.onload = function() {
         animationStartTime = performance.now();
         animate();
