@@ -92,6 +92,11 @@ function animate() {
     }
 }
 
+function setFullHeight() {
+    const fullHeight = window.innerHeight; // 获取可视区域的高度
+    document.documentElement.style.height = fullHeight + 'px'; // 设置文档高度
+}
+
 window.onload = function() {
     animationStartTime = performance.now();
     animate();
