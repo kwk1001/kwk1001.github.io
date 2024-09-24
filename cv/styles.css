@@ -314,7 +314,7 @@ a:hover {
         width: 100%;
         padding: 50px; /* 增加内边距 */
         overflow-y: scroll;
-        min-height: 100dvh;
+        height: 100dvh;
     }
 
     .cv-content .left-col{
