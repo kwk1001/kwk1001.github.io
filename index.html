@@ -134,6 +134,13 @@
 
         @media only screen and (max-width: 840px) {
             /* 针对手机的样式设置 */
+            html, body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                cursor: none;
+                overflow: hidden;
+            }
             .right-column {
                 width: 0%;
                 display: none;
@@ -143,6 +150,11 @@
                 background-color: rgb(206, 8, 8);
                 color: #ffffff;
                 height: 100dvh;
+            }
+            .cover {
+                position: relative;
+                min-height: 100dvh;
+                background: url('/index/assets/kwk1001(2).jpg') no-repeat center center/cover;
             }
         }
     </style>
