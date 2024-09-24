@@ -47,14 +47,6 @@
             const cursor = document.getElementById('cursor');
             cursor.style.display = 'none'; // 隐藏光标
         }
-
-        function setVhCssVar() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        
-        setVhCssVar();
-        window.addEventListener('resize', setVhCssVar);
     });
 
     window.onload = function() {
