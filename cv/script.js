@@ -97,6 +97,9 @@ function setFullHeight() {
     document.documentElement.style.height = fullHeight + 'px'; // 设置文档高度
 }
 
+window.addEventListener('load', setFullHeight);
+window.addEventListener('resize', setFullHeight);
+
 window.onload = function() {
     animationStartTime = performance.now();
     animate();
