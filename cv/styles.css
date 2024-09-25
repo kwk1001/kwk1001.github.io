@@ -283,12 +283,13 @@ a:hover {
 
 .cv-content a {
     color: #007acc; /* 链接颜色 */
-    text-decoration: none; /* 移除下划线 */
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+    text-underline-offset: 2px;
     word-break: break-all;
 }
 
 .cv-content a:hover {
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+    text-decoration: none; /* 移除下划线 */
 }
 
 .cv-content .row{

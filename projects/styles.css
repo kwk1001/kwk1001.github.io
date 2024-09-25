@@ -287,17 +287,30 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
+
 .image-container {
     position: relative;
     padding: 12px; /* 用于给角的直角形状提供空间 */
+    overflow: hidden;
+}
+
+.image-border {
+    width: 100%;
+    overflow: hidden;
 }
 
 .image-frame {
     position: relative;
-    width: 100%;
+    width: 101%;
     padding-top: 56.25%; /* 16:9 比例 */
     background-size: cover;
     background-position: center;
+    transition: transform 20s ease; /* 使图片平滑放大 */
+    transform-origin: center; /* 设置缩放中心为图片的中心 */
+}
+
+.image-container:hover .image-frame {
+    transform: scale(1.2); /* 鼠标悬停时放大 1.2 倍 */
 }
 
 .corners .corner {
@@ -313,18 +326,20 @@ a:hover {
     right: 18px;
     color: white;
     padding: 12px;
+    z-index: 1; /* 确保文字在图片之上 */
 }
 
 .caption a{
     color: white;
-    text-decoration: none;
+    text-decoration: underline 1.2px; /* 给所有行加下划线 */
+    text-decoration-skip-ink: none; /* 确保下划线完整 */
+    text-underline-offset: 2px;
 }
 
 .caption a:hover, h4:hover
 {
     color: white;
-    text-decoration: underline; /* 给所有行加下划线 */
-    text-decoration-skip-ink: none; /* 确保下划线完整 */
+    text-decoration: none;
 }
 
 .caption .date {
