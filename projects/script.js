@@ -96,3 +96,45 @@ window.onload = function() {
     animationStartTime = performance.now();
     animate();
 };
+
+const imageContainers = document.querySelectorAll('.image-container');
+
+imageContainers.forEach(container => {
+    const corners = container.querySelectorAll('.corner');
+    const originalSize = 25; // 原始大小
+
+    container.addEventListener('mouseenter', () => {
+        corners.forEach(corner => {
+            corner.style.width = '40px'; // 设置悬停时的大小
+            corner.style.height = '40px';
+            corner.style.borderColor = '#333'; // 改变边框颜色
+        });
+    });
+
+    container.addEventListener('mouseleave', () => {
+        corners.forEach(corner => {
+            corner.style.width = `${originalSize}px`; // 恢复原始大小
+            corner.style.height = `${originalSize}px`;
+            corner.style.borderColor = 'var(--color-cornor)'; // 恢复原来的边框颜色
+        });
+    });
+});
+
+const specificLinks = document.querySelectorAll('.links a[href="cv.html"]');
+const overlay2 = document.getElementById('overlay2');
+
+specificLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        overlay2.style.display = 'block';
+        overlay2.style.transition = 'opacity 0.5s ease'; // 设置过渡效果
+
+        requestAnimationFrame(() => {
+            overlay2.style.opacity = '1'; // 渐变显示
+        });
+
+        setTimeout(() => {
+            window.location.href = this.href; // 导航到目标链接
+        }, 500); // 与 transition 的时间一致
+    });
+});
