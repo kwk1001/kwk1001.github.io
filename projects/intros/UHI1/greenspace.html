@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SF82EPB41E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SF82EPB41E');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Green</title>
+    <link rel="stylesheet" href="/projects/intros/UHI1/styles.css?v=<?php echo time(); ?>">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const rows = document.querySelectorAll('.fade-row');
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target); // 只执行一次
+                }
+            });
+        });
+    
+        rows.forEach(row => {
+            observer.observe(row);
+        });
+
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 20 + 'px';
+            cursor.style.top = e.pageY + 20 + 'px';
+        });
+
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        if (isMobileDevice()) {
+            const cursor = document.getElementById('cursor');
+            cursor.style.display = 'none'; // 隐藏光标
+        }
+
+        const device = navigator.userAgent.toLowerCase();
+        if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
+            const cursor = document.getElementById('cursor');
+            cursor.style.display = 'none'; // 隐藏光标
+        }
+    });
+
+    window.onload = function() {
+        animationStartTime = performance.now();
+        animate();
+    };
+</script>
+<body>
+    <div id="overlay2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999; opacity: 0; display: none;"></div>
+    <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="tit"><a href="index.html">Weikang&nbsp;Kong</a></div>
+            <div class="header">
+                <p><br></p>
+                <p class="links"><a href="/index.html">Home</a></p>
+                <p class="links"><a href="/projects.html">Projects</a></p>
+            </div>
+            <div class="footer"><br><p><span class="right-align">Projects</span><br></p></div>
+        </div>
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="head-image", style="background-image: url('/projects/assets/thumb/image1.png');">
+
+            </div>
+        </div>
+    <script></script>
+</body>
+</html>

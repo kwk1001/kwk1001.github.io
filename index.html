@@ -180,8 +180,8 @@
         const cursor = document.getElementById('cursor');
 
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 20 + 'px';
+            cursor.style.top = e.pageY + 20 + 'px';
         });
 
         function isMobileDevice() {
@@ -202,7 +202,7 @@
 </script>
 
 <body>
-    <div id="cursor" class="cursor"></div>
+    <div id="cursor" class="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
     <div class="container">
         <div class="column left-column">
             <div class="spacer"></div>

@@ -1,0 +1,140 @@
+:root {
+    --color-primary: rgb(206, 8, 8);
+    --color-cornor: #999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eee8d7; /* 设置整个页面背景颜色 */
+    cursor: none; /* 隐藏原始鼠标光标 */
+    min-height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.cursor {
+    width: 12px; /* 设定圆形直径 */
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /* 确保不阻止其他元素的点击 */
+    background-color: rgba(0, 0, 0, 0.7); /* 初始颜色 */
+    transition: background-color 0.2s; /* 平滑变色 */
+}
+a {cursor: none;}
+a:hover {cursor: none;}
+
+.container {display: flex;height: 100dvh;}
+
+/* 左侧栏样式 */
+.left-column {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    position: fixed;
+    min-height: 100dvh;
+}
+
+.left-column .tit a{
+    font-size: 1.8em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    flex-wrap: wrap
+}
+
+.left-column .header a{
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-decoration: none;
+    color: #333;
+}
+
+.left-column .footer {
+    font-size: 1.5em; /* 设置大字体 */
+    font-weight: 400; /* 字体加粗 */
+    color: #333; /* 字体颜色 */
+    text-transform: uppercase; /* 大写字母 */
+    letter-spacing: 2px; /* 字符间距 */
+    text-align: left; /* 文本左对齐 */
+    margin-top: auto; /* 推到左下角 */
+    line-height: 1.2; /* 行间距 */
+}
+
+.left-column .links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.6em; /* Increase font size for better visibility */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Add spacing between letters */
+    line-height: 1.5
+}
+.left-column .links a {
+    color: #333; /* White text color */
+    text-decoration: none; /* Remove default underline */
+    border-bottom: 1px solid #333; /* Add underline with padding */
+    padding-bottom: 2px; /* Padding below the text */
+}
+.left-column .links a:hover {
+    color: #555;
+    border-bottom-color: #555;
+    border-bottom: none; /* 移除下划线 */
+}
+
+.left-column .footer .right-align {align-self: flex-end; /* 自身右对齐 */width: 50%; /* 占满父元素宽度 */text-align: right; /* 文字右对齐 */}
+.left-column .footer .left-align {align-self: flex-start; /* 自身左对齐 */width: 100%; /* 占满父元素宽度 */text-align: left; /* 文字左对齐 */}
+
+/* 右侧栏样式 */
+.right-column {
+    margin-left: 20%;
+    width: 80%;
+    padding: 50px;
+    min-height: 100dvh;
+    overflow-y: scroll;-ms-overflow-style: none;scrollbar-width: none;
+}
+
+.right-column::-webkit-scrollbar {display: none;}
+.right-column h3 {
+    margin-bottom: 30px;
+    padding-bottom: 5px; /* 增加内边距，使底部边框和文本有间距 */
+    border-bottom: 2px solid #333; /* 设置底部边框样式、粗细和颜色 */
+    font-size: 2em; /* 标题字体大小 */
+    color: #333;
+}
+
+.right-column p {margin-bottom: 5px;line-height: 1.5;color: #555;}
+
+.fade-row {opacity: 0; transition: opacity 1s ease-in-out;}
+.fade-in {opacity: 1;}
+
+.head-image {
+    width: 100%;
+    height: 56.25%;
+}
+
+/* 手机端（小于768px屏幕宽度）的自定义样式 */
+@media only screen and (max-width: 840px) {
+    /* 针对手机的样式设置 */
+    .left-column {
+        width: 0%;
+        display: none;
+    }
+    
+    .right-column {
+        margin-left: 0%;
+        width: 100%;
+        padding: 50px; /* 增加内边距 */
+        overflow-y: scroll;
+        height: 100vh;
+    }
+}

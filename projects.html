@@ -35,8 +35,8 @@
         const cursor = document.getElementById('cursor');
 
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 20 + 'px';
+            cursor.style.top = e.pageY + 20 + 'px';
         });
 
         function isMobileDevice() {
@@ -63,7 +63,7 @@
 <body>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
     <div id="overlay2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999; opacity: 0; display: none;"></div>
-    <div class="cursor" id="cursor" style="z-index: 998;"></div>
+    <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
     <div class="loading-container loaded" style="z-index: 9999">
         <div class="transition-screen" style="transform: translate(0%, -100%); opacity: 1;">
             <div class="shape-round bottom" style="transform: scale(1, 0);"></div>
@@ -111,9 +111,9 @@
                                 <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
                             </div>
                             <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
+                                <a href="/projects/intros/UHI1/greenspace.html">
+                                    <span class="date">Research - 5/2024</span>
+                                    <h4>Greenspace test</h4>
                                 </a>
                             </div>
                         </div>

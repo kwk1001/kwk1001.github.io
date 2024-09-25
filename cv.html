@@ -35,8 +35,8 @@
         const cursor = document.getElementById('cursor');
 
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 20 + 'px';
+            cursor.style.top = e.pageY + 20 + 'px';
         });
 
         function isMobileDevice() {
@@ -61,7 +61,7 @@
     };
 </script>
 <body>
-    <div class="cursor" id="cursor"></div>
+    <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
     <div id="overlay2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999; opacity: 0; display: none;"></div>
     <div class="loading-container loaded" style="z-index: 9999">
