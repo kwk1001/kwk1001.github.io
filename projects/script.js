@@ -92,10 +92,10 @@ function animate() {
     }
 }
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', () => {
     animationStartTime = performance.now();
     animate();
-};
+});
 
 const imageContainers = document.querySelectorAll('.image-container');
 

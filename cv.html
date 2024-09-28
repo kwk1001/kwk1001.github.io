@@ -55,10 +55,10 @@
         }
     });
 
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', () => {
         animationStartTime = performance.now();
         animate();
-    };
+    });
 </script>
 <body>
     <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
