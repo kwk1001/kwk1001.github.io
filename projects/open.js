@@ -122,8 +122,3 @@ function animate() {
         requestAnimationFrame(animate);
     }
 }
-
-window.onload = function() {
-    animationStartTime = performance.now();
-    animate();
-};
