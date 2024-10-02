@@ -1,120 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="/test/a.css?v=<?php echo time(); ?>">
-    <script defer="" src="/test/a.js"></script>
+    <title>Fade In/Out with Positioned Description</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        img {
+            width: 200px;
+            cursor: pointer;
+        }
+
+        /* 过渡效果和透明度 */
+        .d-fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* 控制描述内容的位置和过渡效果 */
+        .description {
+            position: absolute;
+            top: 50px; /* 自定义的顶部位置 */
+            left: 50px; /* 自定义的左侧位置 */
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 10;
+        }
+
+        /* 渐入效果 */
+        .d-fade-in {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="loading-container loaded">
-        <div class="transition-screen" style="transform: translate(0%, -100%); opacity: 1;">
-            <div class="shape-round bottom" style="transform: scale(1, 0);"></div>
-            <div class="shape-round top" style="transform: scale(1, 0);"></div>
-        </div>
-        <div class="transition-words">
-            <div class="wrap" style="opacity: 1; transform: translate(0%, -120%);">
-                <h3 data-change-page-title="" style="font-size: 2em;">Speakers</h3>
-            </div>
-        </div>
+    <h1>Image Gallery with URL Change and Positioned Description</h1>
+    <div class="content">
+        <img src="image1.jpg" alt="Image 1" onclick="showDescription('description1', 'Image 1')">
+        <img src="image2.jpg" alt="Image 2" onclick="showDescription('description2', 'Image 2')">
+        <img src="image3.jpg" alt="Image 3" onclick="showDescription('description3', 'Image 3')">
     </div>
-    <button id="startAnimation" style="z-index: 999999;">Start Animation</button> 
+
+    <div class="description hidden" id="description1">
+        <h2>Image 1 Description</h2>
+        <p>This is the description for Image 1.</p>
+        <button onclick="showAll()">Back to Gallery</button>
+    </div>
+
+    <div class="description hidden" id="description2">
+        <h2>Image 2 Description</h2>
+        <p>This is the description for Image 2.</p>
+        <button onclick="showAll()">Back to Gallery</button>
+    </div>
+
+    <div class="description hidden" id="description3">
+        <h2>Image 3 Description</h2>
+        <p>This is the description for Image 3.</p>
+        <button onclick="showAll()">Back to Gallery</button>
+    </div>
 
     <script>
-    const opacityTransitionSlider = document.getElementById('opacityTransition');
-    const translateYTransitionSlider = document.getElementById('translateYTransition');
-    const scaleYBottomSlider = document.getElementById('scaleYBottom');
-    const scaleYTopSlider = document.getElementById('scaleYTop');
-    const translateYWrapSlider = document.getElementById('translateYWrap');
+        function showDescription(descriptionId, title) {
+            // 让当前页面的所有非描述元素逐渐淡出
+            document.querySelectorAll('body > *').forEach(element => {
+                if (!element.classList.contains('description')) {
+                    element.classList.add('fade-out');
+                }
+            });
 
-    const transitionScreen = document.querySelector('.transition-screen');
-    const shapeBottom = document.querySelector('.shape-round.bottom');
-    const shapeTop = document.querySelector('.shape-round.top');
-    const wrap = document.querySelector('.wrap');
+            // 确保描述内容开始是不可见的
+            document.querySelectorAll('.description').forEach(description => {
+                description.classList.add('hidden');
+                description.classList.remove('fade-in');
+            });
 
-    const duration = 2200; // 总持续时间
-    const startTime = performance.now(); // 动画开始时间
-    const scaleYFactor = 3; // scaleYBottom / scaleYTop 的加速因子
-    const translateYTransitionFactor = 4; // translateYTransition 的加速因子
-    const translateYWrapFactor = 2; // translateYWrap 的加速因子
+            // 延时0.5秒（与transition时间相同），然后展示新的描述内容
+            setTimeout(() => {
+                const element = document.getElementById(descriptionId);
+                element.classList.remove('hidden');
+                element.classList.add('fade-in');
+            }, 500);
 
-    let animationStartTime; // 用于记录每次动画的开始时间
+            // 使用 History API 改变 URL
+            const newUrl = `?image=${descriptionId}`;
+            history.pushState({ descriptionId: descriptionId }, title, newUrl);
 
-    function ease(t, factor) {
-        return Math.pow(t, factor);
-    }
-
-    function easeInOut(t) {
-        return (Math.sin((t - 0.5) * Math.PI) + 1) / 2; // 使用正弦函数进行平滑插值
-    }
-
-    function animate() {
-        const currentTime = performance.now();
-        const elapsedTime = (currentTime - animationStartTime) / 1000; // 转换为秒
-
-        // 1. scaleYBottom 动画
-        if (elapsedTime <= 0.4) {
-            const t = ease(elapsedTime / 0.4, scaleYFactor);
-            shapeBottom.style.transform = `scale(1, ${t})`;
-        } else if (elapsedTime <= 0.8) {
-            const t = ease((elapsedTime - 0.4) / 0.4, scaleYFactor);
-            shapeBottom.style.transform = `scale(1, ${1 - t})`;
-        } else if (elapsedTime > 0.8) {
-            shapeBottom.style.transform = `scale(1, 0)`;
-        } 
-
-        // 2. scaleYTop 动画
-        if (elapsedTime >= 0.9 && elapsedTime <= 1.5) {
-            const t = ease((elapsedTime - 0.9) / 0.6, scaleYFactor);
-            shapeTop.style.transform = `scale(1, ${t})`;
-        } else if (elapsedTime > 1.5 && elapsedTime <= 1.6) {
-            shapeTop.style.transform = `scale(1, 1)`;
-        } else if (elapsedTime > 1.6 && elapsedTime <= 2.2) {
-            const t = ease((elapsedTime - 1.6) / 0.6, scaleYFactor);
-            shapeTop.style.transform = `scale(1, ${1 - t})`;
-        } else if (elapsedTime > 2.2) {
-            shapeTop.style.transform = `scale(1, 0)`;
-        } 
-
-        // 3. translateYTransition 动画
-        if (elapsedTime <= 0.8) {
-            const t = ease(elapsedTime / 0.8, translateYTransitionFactor);
-            const translateY = 100 - (100 * easeInOut(t)); // 使用平滑插值
-            transitionScreen.style.transform = `translate(0%, ${translateY}%)`;
-        } else if (elapsedTime >= 0.9 && elapsedTime <= 2.2) {
-            const t = ease((elapsedTime - 0.9) / 1.3, translateYTransitionFactor);
-            const translateY = -100 * easeInOut(t); // 使用平滑插值
-            transitionScreen.style.transform = `translate(0%, ${translateY}%)`;
-        } else if (elapsedTime > 2.2) {
-            transitionScreen.style.transform = `translate(0%, -100%)`;
-        } 
-
-        // 4. translateYWrap 动画
-        if (elapsedTime >= 0.3 && elapsedTime <= 0.9) {
-            const t = ease((elapsedTime - 0.3) / 0.6, translateYWrapFactor);
-            const translateYWrap = 75 * (1 - easeInOut(t)); // 使用正弦函数进行平滑过渡
-            wrap.style.transform = `translate(0%, ${translateYWrap}%)`;
-        } else if (elapsedTime > 0.8 && elapsedTime <= 1.4) {
-            // 停留在0位置
-            wrap.style.transform = `translate(0%, 0%)`;
-        } else if (elapsedTime > 1.4 && elapsedTime <= 2.0) {
-            const t = ease((elapsedTime - 1.4) / 0.6, translateYWrapFactor);
-            const translateYWrap = -75 * easeInOut(t); // 从0转变为-70
-            wrap.style.transform = `translate(0%, ${translateYWrap}%)`;
+            // 改变页面标题
+            document.title = title;
         }
 
-        if (elapsedTime < duration / 1000) {
-            requestAnimationFrame(animate);
-        }
-    }
+        function showAll() {
+            // 让描述内容逐渐淡出
+            document.querySelectorAll('.description').forEach(description => {
+                description.classList.remove('fade-in');
+            });
 
-    // 点击按钮时开始动画
-    document.getElementById('startAnimation').addEventListener('click', () => {
-        animationStartTime = performance.now(); // 记录开始时间
-        animate(); // 开始动画
-    });
+            // 延时0.5秒（与transition时间相同），显示所有其他内容并重置URL
+            setTimeout(() => {
+                document.querySelectorAll('body > *').forEach(element => {
+                    element.classList.remove('hidden');
+                    element.classList.remove('fade-out');
+                });
+
+                document.querySelectorAll('.description').forEach(description => {
+                    description.classList.add('hidden');
+                });
+
+                // Reset URL to base URL
+                history.pushState({}, '', window.location.pathname);
+                document.title = 'Image Gallery with URL Change and Positioned Description';
+            }, 500);
+        }
+
+        // 处理浏览器的后退/前进按钮
+        window.onpopstate = function(event) {
+            if (event.state && event.state.descriptionId) {
+                showDescription(event.state.descriptionId, document.title);
+            } else {
+                showAll();
+            }
+        };
+
+        // 页面加载时根据URL显示正确内容
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const imageId = params.get('image');
+            if (imageId) {
+                showDescription(imageId, document.title);
+            }
+        };
     </script>
 </body>
 </html>

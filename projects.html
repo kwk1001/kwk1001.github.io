@@ -15,51 +15,7 @@
     <title>Weikang Kong | Projects</title>
     <link rel="stylesheet" href="/projects/styles.css?v=<?php echo time(); ?>">
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const rows = document.querySelectorAll('.fade-row');
-    
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target); // 只执行一次
-                }
-            });
-        });
-    
-        rows.forEach(row => {
-            observer.observe(row);
-        });
 
-        const cursor = document.getElementById('cursor');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 20 + 'px';
-            cursor.style.top = e.pageY + 20 + 'px';
-        });
-
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        if (isMobileDevice()) {
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-
-        const device = navigator.userAgent.toLowerCase();
-        if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-    });
-
-    window.onload = function() {
-        animationStartTime = performance.now();
-        animate();
-    };
-</script>
 <body>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
     <div id="overlay2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999; opacity: 0; display: none;"></div>
@@ -87,6 +43,10 @@
                 <p class="links"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
             </div>
             <div class="footer">
+                <div class="back-button hidden" onclick="showAll()" id="back">
+                    < Back to Menu 
+                </div>
+                <br>
                 <br>
                 <p>
                     <span class="right-align">Projects</span><br>
@@ -99,6 +59,7 @@
             <div class="project-list">
                 <h3 class="fade-row">2024</h3>
                 <div class="projects fade-row">
+
                     <div class="project">
                         <div class="image-container">
                             <div class="image-border">
@@ -111,7 +72,7 @@
                                 <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
                             </div>
                             <div class="caption">
-                                <a href="/projects/intros/UHI1/greenspace.html">
+                                <a onclick="showDescription('description1')">
                                     <span class="date">Research - 5/2024</span>
                                     <h4>Greenspace test</h4>
                                 </a>
@@ -122,7 +83,7 @@
                     <div class="project">
                         <div class="image-container">
                             <div class="image-border">
-                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
+                                <div class="image-frame" style="background-image: url('/projects/assets//thumb/LSEV.jpg');"></div>
                             </div>
                             <div class="corners">
                                 <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
@@ -131,74 +92,14 @@
                                 <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
                             </div>
                             <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
+                                <a onclick="showDescription('description2')">
+                                    <span class="date">Research - 5/2024</span>
+                                    <h4>Project2</h4>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="project">
-                        <div class="image-container">
-                            <div class="image-border">
-                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
-                            </div>
-                            <div class="corners">
-                                <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner top-right" style="top: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-left" style="bottom: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                            </div>
-                            <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="image-container">
-                            <div class="image-border">
-                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
-                            </div>
-                            <div class="corners">
-                                <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner top-right" style="top: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-left" style="bottom: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                            </div>
-                            <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="image-container">
-                            <div class="image-border">
-                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
-                            </div>
-                            <div class="corners">
-                                <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner top-right" style="top: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-left" style="bottom: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                                <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
-                            </div>
-                            <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 添加更多项目 -->
+                
                 </div>
                 <h3 class="fade-row">2023</h3>
                 <div class="projects fade-row">
@@ -244,9 +145,25 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
+
+        <!-- Project1 项目介绍 -->
+        <div class="description-container hidden" id="description1">
+            <h2>Greenspace Test</h2>
+            <img src="/projects/assets/thumb/image1.png" alt="Greenspace Test Image" />
+            <p>This is a detailed description of the greenspace test project. It explores various aspects of urban green space development.</p>
+        </div>
+    
+        <!-- Neo-Tokyo's Haven 项目介绍 -->
+        <div class="description-container hidden" id="description2">
+            <h2>Neo-Tokyo's Haven</h2>
+            <img src="/projects/assets/thumb/image2.png" alt="Neo-Tokyo's Haven Image" />
+            <p>This project explores the design of urban shelters in Neo-Tokyo. It focuses on sustainability and urban resilience.</p>
         </div>
     </div>
+    </div>
+    <script src="/projects/open.js"></script>
     <script src="/projects/script.js"></script>
 </body>
 </html>
