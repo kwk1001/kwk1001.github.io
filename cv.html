@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="/cv/styles.css?v=<?php echo time(); ?>">
 </head>
 <script>
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
         animationStartTime = performance.now();
         animate();
-    };
+    });
 </script>
 <body>
     <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>

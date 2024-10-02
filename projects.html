@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="/projects/styles.css?v=<?php echo time(); ?>">
 </head>
 <script>
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
         animationStartTime = performance.now();
         animate();
-    };
+    });
 </script>
 <body>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
