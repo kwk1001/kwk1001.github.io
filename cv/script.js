@@ -1,9 +1,3 @@
-const opacityTransitionSlider = document.getElementById('opacityTransition');
-const translateYTransitionSlider = document.getElementById('translateYTransition');
-const scaleYBottomSlider = document.getElementById('scaleYBottom');
-const scaleYTopSlider = document.getElementById('scaleYTop');
-const translateYWrapSlider = document.getElementById('translateYWrap');
-
 const transitionScreen = document.querySelector('.transition-screen');
 const shapeBottom = document.querySelector('.shape-round.bottom');
 const shapeTop = document.querySelector('.shape-round.top');
@@ -16,6 +10,43 @@ const translateYTransitionFactor = 4; // translateYTransition 的加速因子
 const translateYWrapFactor = 2; // translateYWrap 的加速因子
 
 let animationStartTime; // 用于记录每次动画的开始时间
+
+const rows = document.querySelectorAll('.fade-row');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target); // 只执行一次
+        }
+    });
+});
+
+rows.forEach(row => {
+    observer.observe(row);
+});
+
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.pageX + 20 + 'px';
+    cursor.style.top = e.pageY + 20 + 'px';
+});
+
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+if (isMobileDevice()) {
+    const cursor = document.getElementById('cursor');
+    cursor.style.display = 'none'; // 隐藏光标
+}
+
+const device = navigator.userAgent.toLowerCase();
+if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
+    const cursor = document.getElementById('cursor');
+    cursor.style.display = 'none'; // 隐藏光标
+}
 
 function ease(t, factor) {
     return Math.pow(t, factor);

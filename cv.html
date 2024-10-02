@@ -16,49 +16,10 @@
     <link rel="stylesheet" href="/cv/styles.css?v=<?php echo time(); ?>">
 </head>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const rows = document.querySelectorAll('.fade-row');
-    
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target); // 只执行一次
-                }
-            });
-        });
-    
-        rows.forEach(row => {
-            observer.observe(row);
-        });
-
-        const cursor = document.getElementById('cursor');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 20 + 'px';
-            cursor.style.top = e.pageY + 20 + 'px';
-        });
-
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        if (isMobileDevice()) {
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-
-        const device = navigator.userAgent.toLowerCase();
-        if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
+    window.onload = function() {
         animationStartTime = performance.now();
         animate();
-    });
+    };
 </script>
 <body>
     <div class="cursor" id="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
