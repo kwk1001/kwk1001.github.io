@@ -22,6 +22,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         animationStartTime = performance.now();
         animate();
+
+        const hash = window.location.hash;
+        if (hash) {
+        const descriptionId = hash.substring(1);
+        showDescription(descriptionId);
+        history.replaceState(null, '', window.location.pathname);
+        }
     });
 </script>
 <body>

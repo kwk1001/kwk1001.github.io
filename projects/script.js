@@ -39,20 +39,6 @@ specificLinks.forEach(link => {
     });
 });
 
-window.onload = function() {
-    const hash = window.location.hash;
-    
-    // 如果哈希值存在并且是有效的描述 ID（例如 #description1）
-    if (hash) {
-      const descriptionId = hash.substring(1); // 去掉前面的 # 符号
-      // 调用 showDescription 函数显示对应的描述
-      showDescription(descriptionId);
-
-      // 去掉哈希值（使URL清晰）
-      history.replaceState(null, '', window.location.pathname); // 去掉 # 和参数
-    }
-  };
-
 function showDescription(descriptionId) {
     // 隐藏项目列表
     document.querySelector('.project-list').classList.remove('d-fade-in');
