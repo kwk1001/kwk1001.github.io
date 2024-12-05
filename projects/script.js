@@ -96,3 +96,19 @@ function showAll() {
         });
     }, 500);
 }
+
+document.getElementById('Portfolio').addEventListener('click', function() {
+    gtag('event', 'Portfolio_download', {
+      'event_category': 'download',
+      'event_label': 'Portfolio_button',
+      'value': 1
+    });
+  });
+
+document.getElementById('scooter').addEventListener('click', function() {
+gtag('event', 'scooter_read', {
+    'event_category': 'read',
+    'event_label': 'scooter',
+    'value': 1
+});
+});
