@@ -47,10 +47,10 @@
                 <p class="links"><a href="projects.html">Projects</a></p>
                 <p class="links"><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
                 <p class="links"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
-                <p class="links"><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank">Portfolio</a></p>
+                <p class="links"><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank" id="portfolio">Portfolio</a></p>
             </div>
             <div class="footer">
-                <p class="links"><a href="cv/CV-WeikangKong.pdf" target="_blank">Download PDF</a></p>
+                <p class="links"><a href="cv/CV-WeikangKong.pdf" target="_blank" id="cv">Download PDF</a></p>
                 <br>
                 <p>
                     <span class="right-align">Curriculum</span><br>
@@ -335,5 +335,21 @@
     </div>
     <script src="open.js"></script>
     <script src="/cv/script.js"></script>
+    <script>
+        document.getElementById('portfolio').addEventListener('click', function() {
+            gtag('event', 'Portfolio_download', {
+            'event_category': 'download',
+            'event_label': 'Portfolio_button',
+            'value': 1
+            });
+        });
+        document.getElementById('cv').addEventListener('click', function() {
+            gtag('event', 'cv_download', {
+            'event_category': 'download',
+            'event_label': 'cv_button',
+            'value': 1
+            });
+        });
+    </script>
 </body>
 </html>
