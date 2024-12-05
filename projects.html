@@ -22,14 +22,17 @@
     document.addEventListener('DOMContentLoaded', function() {
         animationStartTime = performance.now();
         animate();
-
-        const hash = window.location.hash;
-        if (hash) {
-        const descriptionId = hash.substring(1);
-        showDescription(descriptionId);
-        history.replaceState(null, '', window.location.pathname);
-        }
     });
+</script>
+<script>
+    window.onload = function() {
+    const hash = window.location.hash;
+    if (hash) {
+      const descriptionId = hash.substring(1);
+      showDescription(descriptionId);
+      history.replaceState(null, '', window.location.pathname);
+    }
+  };
 </script>
 <body>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
@@ -56,9 +59,9 @@
                 <p class="links"><a href="cv.html">CV</a></p>
                 <p class="links"><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
                 <p class="links"><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
+                <p class="links"><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank">Portfolio</a></p>
             </div>
             <div class="footer">
-                <p class="links fade-row download"><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank">Download Portfolio</a></p>
                 <div class="back-button hidden" onclick="showAll()" id="back">
                     < Back to Menu 
                 </div>
@@ -140,7 +143,30 @@
                     </div>
                 </div>
 
-                <h3 class="fade-row">2022</h3>
+                <h3 class="fade-row">Architectural Design</h3>
+                <div class="projects fade-row">
+                    <div class="project">
+                        <div class="image-container">
+                            <div class="image-border">
+                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
+                            </div>
+                            <div class="corners">
+                                <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
+                                <div class="corner top-right" style="top: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
+                                <div class="corner bottom-left" style="bottom: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
+                                <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
+                            </div>
+                            <div class="caption">
+                                <a href="#">
+                                    <span class="date">Design - 5/2024</span>
+                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="fade-row">Other Works</h3>
                 <div class="projects fade-row">
                     <div class="project">
                         <div class="image-container">
