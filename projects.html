@@ -89,7 +89,7 @@
                                 <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
                             </div>
                             <div class="caption">
-                                <a onclick="showDescription('scooter')" id="scooter">
+                                <a onclick="showDescription('scooter')" id="scooter_read">
                                     <span class="date">12/2023 - Present</span>
                                     <h4>Mobility Justice: Rethink Scooter Bans</h4>
                                 </a>
@@ -204,6 +204,22 @@
     </div>
     </div>
     <script src="open.js"></script>
+    <script>
+        document.getElementById('Portfolio').addEventListener('click', function() {
+            gtag('event', 'Portfolio_download', {
+            'event_category': 'download',
+            'event_label': 'Portfolio_button',
+            'value': 1
+            });
+        });
+        document.getElementById('scooter_read').addEventListener('click', function() {
+            gtag('event', 'scooter_read', {
+                'event_category': 'read',
+                'event_label': 'scooter_read',
+                'value': 1
+            });
+        });
+    </script>
     <script src="/projects/script.js"></script>
 </body>
 </html>
