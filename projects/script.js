@@ -39,10 +39,26 @@ specificLinks.forEach(link => {
     });
 });
 
+window.onload = function() {
+    const hash = window.location.hash;
+    
+    // 如果哈希值存在并且是有效的描述 ID（例如 #description1）
+    if (hash) {
+      const descriptionId = hash.substring(1); // 去掉前面的 # 符号
+      // 调用 showDescription 函数显示对应的描述
+      showDescription(descriptionId);
+
+      // 去掉哈希值（使URL清晰）
+      history.replaceState(null, '', window.location.pathname); // 去掉 # 和参数
+    }
+  };
+
 function showDescription(descriptionId) {
     // 隐藏项目列表
     document.querySelector('.project-list').classList.remove('d-fade-in');
     document.querySelector('.project-list').classList.add('d-fade-out');
+    document.querySelector('.download').classList.remove('d-fade-in');
+    document.querySelector('.download').classList.add('d-fade-out');
     document.getElementById('back').classList.add('d-fade-out');
 
     // 隐藏所有描述内容
@@ -83,6 +99,8 @@ function showAll() {
         document.getElementById('back').classList.add('hidden');
         document.querySelector('.project-list').classList.remove('d-fade-out');
         document.querySelector('.project-list').classList.add('d-fade-in');
+        document.querySelector('.download').classList.remove('d-fade-out');
+        document.querySelector('.download').classList.add('d-fade-in');
         document.querySelectorAll('.description-container').forEach(description => {
             description.classList.add('hidden');
         });

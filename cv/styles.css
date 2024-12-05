@@ -228,7 +228,8 @@ a:hover {
 
 /* 右侧栏样式 */
 .right-column {
-    margin-left: 20%;
+    margin-left: 25%;
+    margin-right: 10%;
     width: 80%;
     padding: 50px; /* 增加内边距 */
     min-height: 100dvh;
@@ -268,8 +269,8 @@ a:hover {
     opacity: 1;
 }
 
- .left-col{
-    width: 15%; /* 左侧列占30%的宽度 */
+.left-col{
+    width: 20%; /* 左侧列占30%的宽度 */
     text-align: right; /* 内容靠右对齐 */
     color: #555; /* 字体颜色为灰色 */
     font-size: 1em; /* 字体大小 */
@@ -277,7 +278,7 @@ a:hover {
 }
 
 .cv-content .right-col{
-    width: 80%; /* 左侧列占30%的宽度 */
+    width: 75%; /* 左侧列占30%的宽度 */
     margin-left: 0px; /* 向左移动，使其位于分割线之外 */
 }
 
