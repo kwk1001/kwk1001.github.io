@@ -273,8 +273,9 @@ a:hover {
     width: 20%; /* 左侧列占30%的宽度 */
     text-align: right; /* 内容靠右对齐 */
     color: #555; /* 字体颜色为灰色 */
-    font-size: 1em; /* 字体大小 */
+    font-size: 0.9em; /* 字体大小 */
     margin-right: 15px; /* 向左移动，使其位于分割线之外 */
+    margin-top: 2px;
 }
 
 .cv-content .right-col{
