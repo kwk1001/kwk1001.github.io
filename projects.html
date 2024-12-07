@@ -237,8 +237,8 @@
                     <p class="left-text-small"><strong>Authors:</strong> Yanting Shen, Weikang Kong, Xilong Chen, Fan Fei, Yiwen Xu</p>
                     <p class="left-text-small"><strong>Supervisor:</strong> Prof. Jiawei Yao - Tongji University</p>
                     <p class="left-text-small"><strong>Publications:</strong></p>
-                    <p class="left-text-small">Shen, Y., <strong>Kong, W.</strong>, Fei, F., Chen, X., Xu, Y., Huang, C., & Yao, J. (2024). Stereoscopic urban morphology metrics enhance the nonlinear scale heterogeneity modeling of UHI with explainable AI. Urban Climate, 56, 102006. <a href=https://doi.org/10.1016/j.uclim.2024.102006 target="_blank"> DOI</a></p>
-                    <p class="left-text-small">Shen, Y., <strong>Kong, W.</strong>, Chen, X., Fei, F., Xu, Y., Huang, C., & Yao, J. (2023). Using GeoAI to Reveal the Contribution of Urban Park Green Space Features to Mitigate the Heat Island Effect. In Proceedings of the 41st International Conference on Education and Research in Computer Aided Architectural Design in Europe (eCAADe) (Vol. 2, p. 2).<a href=https://ecaade.org/current/wp-content/uploads/2023/09/eCAADe_2023_Volume2-wCover-R.pdf target="_blank"> Proceeding</a></p>
+                    <p class="left-text-small">Shen, Y., <strong>Kong, W.</strong>, Fei, F., Chen, X., Xu, Y., Huang, C., & Yao, J. (2024). Stereoscopic urban morphology metrics enhance the nonlinear scale heterogeneity modeling of UHI with explainable AI. Urban Climate, 56, 102006. <a href=https://doi.org/10.1016/j.uclim.2024.102006 target="_blank">DOI</a></p>
+                    <p class="left-text-small">Shen, Y., <strong>Kong, W.</strong>, Chen, X., Fei, F., Xu, Y., Huang, C., & Yao, J. (2023). Using GeoAI to Reveal the Contribution of Urban Park Green Space Features to Mitigate the Heat Island Effect. In Proceedings of the 41st International Conference on Education and Research in Computer Aided Architectural Design in Europe (eCAADe) (Vol. 2, p. 2). <a href=https://ecaade.org/current/wp-content/uploads/2023/09/eCAADe_2023_Volume2-wCover-R.pdf target="_blank">Proceeding</a></p>
                 </div>
                 <div class="description-column">
                     <a href="/projects/assets/thumb/LST.jpg" data-fancybox="UHI_a" data-caption="">
@@ -395,14 +395,11 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
-    <script src="open.js" defer></script>
-    <script src="/projects/monitor.js" defer></script>
-    <script src="/projects/script.js" defer></script>
     <script>
         $(document).ready(function() {
-            $.fancybox.defaults.buttons = ['close'];
-            $.fancybox.defaults.caption = false;
-            $.fancybox.defaults.loop = true;
+            $.fancybox.defaults.buttons = ['close']; // 设置全局按钮
+            $.fancybox.defaults.caption = false; // 设置全局标题
+
             $("[data-fancybox]").fancybox({
                 touch: false,
                 baseClass: 'custom-fancybox',
@@ -411,9 +408,15 @@
                 },
                 afterClose: function(instance, current) {
                     window.scrollTo(scrollPosition.left, scrollPosition.top);
-                }
+                },
+                buttons: ['close'], // 确保显式设置按钮
+                caption: false,  // 确保显式禁用标题
             });
         });
     </script>
+    <script src="open.js" defer></script>
+    <script src="/projects/monitor.js" defer></script>
+    <script src="/projects/script.js" defer></script>
+    
 </body>
 </html>

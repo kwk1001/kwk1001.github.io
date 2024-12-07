@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weikang Kong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         html, body {
             min-height: 100dvh;
@@ -18,6 +17,13 @@
         h1 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
+        }
+        h2 {
+            font-size: 1.2em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            margin-top: 0px;
+            margin-bottom: 5px;
         }
         p {
             font-family: 'Poppins', sans-serif;
@@ -52,7 +58,7 @@
             padding: 50px;
         }
         .left-column {
-            flex: 1;
+            flex: 0.5;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -103,16 +109,30 @@
             border-bottom-color: #f0f0f0;
             border-bottom: none; /* 移除下划线 */
         }
-        .cover {
+
+        /* 轮播容器样式 */
+        .carousel {
             position: relative;
             min-height: 100dvh;
-            background: url('/index/assets/1.jpg') no-repeat center center/cover;
+            background-color: #000; /* 背景颜色，防止图片加载前显示白色 */
+            overflow: hidden;
         }
-        .cover p {
+
+        /* 轮播图片样式 */
+        .carousel-image {
             position: absolute;
-            bottom: 50px;
-            right: 50px;
-            font-size: 14px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持图片比例，覆盖整个容器 */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* 当前显示的图片 */
+        .carousel-image.active {
+            opacity: 1;
         }
 
         .fade-row {
@@ -143,87 +163,117 @@
                 color: #ffffff;
                 height: 100dvh;
             }
-            .cover {
+            .carousel {
                 position: relative;
                 height: 100dvh;
-                background: url('/index/assets/kwk1001(2).jpg') no-repeat center center/cover;
+                background: url('/projects/water/Model1.jpg') no-repeat center center/cover;
             }
         }
     </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJKS9GP9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'GT-MJKS9GP9');
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const rows = document.querySelectorAll('.fade-row');
-    
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target); // 只执行一次
-                }
-            });
-        });
-        
-        rows.forEach(row => {
-            observer.observe(row);
-        });
-
-        const cursor = document.getElementById('cursor');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 20 + 'px';
-            cursor.style.top = e.pageY + 20 + 'px';
-        });
-
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        if (isMobileDevice()) {
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-        
-        const device = navigator.userAgent.toLowerCase();
-        if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
-            const cursor = document.getElementById('cursor');
-            cursor.style.display = 'none'; // 隐藏光标
-        }
-    });
-</script>
-
 <body>
+    <!-- 光标跟随元素 -->
     <div id="cursor" class="cursor" style="z-index: 998; transform: translateX(-20px) translateY(-20px);"></div>
+
     <div class="container">
         <div class="column left-column">
             <div class="spacer"></div>
             <div>
                 <h1 class="title fade-row">Weikang Kong</h1>
+                <h2 class="fade-row"><br></h2>
+                <h2 class="fade-row">City Planning</h2>
+                <h2 class="fade-row">Architecture</h2>
+                <h2 class="fade-row">Mathematics</h2>
+                <h2 class="fade-row">Data Science</h2>
+                <!-- <h2 class="fade-row">Design</h2> -->
+                <h2 class="fade-row">......</h2>
                 <!-- <h1 class="title2">孔维康</h1> -->
-                <p class="description fade-row">I am a fourth-year undergraduate student majoring in Urban Planning, looking forward to applying for a master's degree in
+                <!-- <p class="description fade-row">I am a fifth-year undergraduate student majoring in Urban Planning at Tongji University, looking forward to applying for a master's degree in
                     2024 fall and devoting myself to urban studies in the future. I have a solid foundation in mathematics and programming and
-                    a keen interest in conducting research and analysis related to various urban issues.</p>
+                    a keen interest in conducting research and analysis related to various urban issues.</p> -->
             </div>
             <div class="links fade-row">
                 <p><a href="projects.html">Projects</a></p>
                 <p><a href="cv.html">CV</a></p>
-                <p><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p>
-                <p><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p>
+                <p><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank">Portfolio</a></p>
+                <!-- <p><a href="https://github.com/kwk1001" target="_blank">GitHub</a></p> -->
+                <p><a href="https://scholar.google.com/citations?user=b3JFNh8AAAAJ" target="_blank">Google Scholar</a></p>
+                <p><a href="mailto:kongweikang@tongji.edu.cn">Email</a></p> 
             </div>
         </div>
         <div class="column right-column">
-            <div class="cover">
+            <div class="carousel">
+                <img src="/projects/water/Model1.jpg"class="carousel-image active" alt="Image 1">
+                <img src="/projects/Tuan/Night.jpg" class="carousel-image" alt="Image 2">
+                <img src="/projects/assets/thumb/LSEV.jpg" class="carousel-image" alt="Image 3">
+                <!-- 根据需要添加更多图片 -->
             </div>
         </div>
     </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJKS9GP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'GT-MJKS9GP9');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rows = document.querySelectorAll('.fade-row');
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target); // 只执行一次
+                    }
+                });
+            });
+            
+            rows.forEach(row => {
+                observer.observe(row);
+            });
+
+            // 光标跟随逻辑
+            const cursor = document.getElementById('cursor');
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.pageX + 20 + 'px';
+                cursor.style.top = e.pageY + 20 + 'px';
+            });
+
+            function isMobileDevice() {
+                return /Mobi|Android/i.test(navigator.userAgent);
+            }
+
+            if (isMobileDevice()) {
+                const cursor = document.getElementById('cursor');
+                cursor.style.display = 'none'; // 隐藏光标
+            }
+            
+            const device = navigator.userAgent.toLowerCase();
+            if(/iPad/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints >1)){
+                const cursor = document.getElementById('cursor');
+                cursor.style.display = 'none'; // 隐藏光标
+            }
+
+            // 轮播逻辑
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel-image');
+            const totalImages = images.length;
+
+            // 确保有多于一张图片才需要轮播
+            if (totalImages > 1) {
+                setInterval(() => {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % totalImages;
+                    images[currentIndex].classList.add('active');
+                }, 5000); // 每3秒切换一次
+            }
+        });
+    </script>
 </body>
 </html>
