@@ -16,8 +16,15 @@ rows.forEach(row => {
 const cursor = document.getElementById('cursor');
 
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.pageX + 20 + 'px';
-    cursor.style.top = e.pageY + 20 + 'px';
+    const cursorSize = 20; // 光标的尺寸
+    const cursorX = e.pageX + cursorSize;
+    const cursorY = e.pageY + cursorSize;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const adjustedX = Math.min(cursorX, windowWidth + 5);
+    const adjustedY = Math.min(cursorY, windowHeight+ 5);
+    cursor.style.left = adjustedX + 'px';
+    cursor.style.top = adjustedY + 'px';
 });
 
 function isMobileDevice() {

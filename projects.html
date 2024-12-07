@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weikang Kong | Projects</title>
     <link rel="stylesheet" href="/projects/styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <style>
+        .fancybox-bg {background: rgba(238, 232, 215, 1) !important;}
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJKS9GP9"></script>
@@ -61,7 +65,7 @@
                 <p class="links"><a href="projects/Portfolio - Weikang Kong.pdf" target="_blank" id="portfolio">Portfolio</a></p>
             </div>
             <div class="footer">
-                <div class="back-button hidden" onclick="showAll()" id="back">
+                <div class="back-button d-fade-out" onclick="showAll()" id="back">
                     < Back to Menu
                 </div>
                 <br>
@@ -147,7 +151,7 @@
                     <div class="project">
                         <div class="image-container">
                             <div class="image-border">
-                                <div class="image-frame" style="background-image: url('/projects/assets/thumb/image1.png');"></div>
+                                <div class="image-frame" style="background-image: url('/projects/water/Model1.jpg');"></div>
                             </div>
                             <div class="corners">
                                 <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
@@ -156,9 +160,9 @@
                                 <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
                             </div>
                             <div class="caption">
-                                <a href="#">
-                                    <span class="date">Design - 5/2024</span>
-                                    <h4>Neo-Tokyo's Haven: Unveiling the Pinnacle of Urban Shelter</h4>
+                                <a onclick="showDescription('water')" id="water_read">
+                                    <span class="date">4/2023 - 6/2023</span>
+                                    <h4>Under Water Pressure: Sports complex</h4>
                                 </a>
                             </div>
                         </div>
@@ -189,23 +193,145 @@
                 </div>
             </div>
 
-        <!-- Project1 项目介绍 -->
-        <div class="description-container hidden" id="scooter">
-            <h2>Scooter</h2>
-            <img src="/projects/assets/thumb/image1.png" alt="Greenspace Test Image" />
-            <p>This is a detailed description of the greenspace test project. It explores various aspects of urban green space development.</p>
+            <!-- Project1 项目介绍 -->
+            <div class="description-container d-fade-out hidden" id="scooter">
+                <div class="description-column">
+                    <h2>Scooter</h2>
+                    <p>这里是左侧的内容，可以放置文字、图片或者其他元素。</p>
+                </div>
+                <div class="description-column">
+                    <h2>中间内容</h2>
+                    <p>这里是中间的内容，可以放置文字、图片或者其他元素。</p>
+                </div>
+                <div class="description-column">
+                    <h2>右侧内容</h2>
+                    <img class = "des-image-full" src="/projects/assets/thumb/image1.png" alt="Greenspace Test Image" />
+                </div>
+            </div>
+
+            <!-- Project2 项目介绍 -->
+            <div class="description-container d-fade-out hidden " id="description2">
+                <h2>Neo-Tokyo's Haven</h2>
+                <img  src="/projects/assets/thumb/image1.png" alt="Neo-Tokyo's Haven Image" />
+                <p>This project explores the design of urban shelters in Neo-Tokyo. It focuses on sustainability and urban resilience.</p>
+            </div>
+
+            <!-- Water 项目介绍 -->
+            <div class="description-container d-fade-out hidden" id="water">
+                <div class="description-column">
+                    <p class="title">Under Water Pressure: Sports Complex</p>
+                    <p class="left-text">The existing swimming pool and gym at Tongji University can no longer meet the growing and diverseactivity needs of students. This design proposes the reconslruction of a sports complex on the original site,integrating various sports facilities and student organizafion spaces. The strict area and height requirementsfor sports venues make vertical stacking and large spans inevilable. The design introduces an innovative lever-like structural approach, elevating the pool to enhance the swimming experience while organizingclub activities within the structure, achieving an highly open ground level and spatial integrafion.</p>
+                    <p class="left-text-small"><br><br><br><br></p>
+                    <p class="left-text-small"><strong>Time:</strong> 04/2023 - 06/2023</p>
+                    <p class="left-text-small"><strong>Author:</strong> Weikang Kong, Zhenyuan Zhang, Yanzi Jin, Mengfei Zhao</p>
+                    <p class="left-text-small"><strong>Site location:</strong> Tongji University</p>
+                </div>
+                <div class="description-column">
+                    <a href="/projects/water/Concept.png" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Concept.png" alt="Image">
+                    </a>
+                    <p class="description-text">Requirements and Design logic</p>
+
+                    <a href="/projects/water/Function Explosion.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Function Explosion.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Functions</p>
+
+                    <a href="/projects/water/Structure.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Structure.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Structures</p>
+
+                    <a href="/projects/water/1F Plan.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/1F Plan.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">1F Plan</p>
+
+                    <a href="/projects/water/2F Plan.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/2F Plan.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">2F Plan</p>
+
+                    <a href="/projects/water/3F Plan.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/3F Plan.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">3F Plan</p>
+
+                    <a href="/projects/water/4F&5F Plan.jpg" data-fancybox="water_b" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/4F&5F Plan.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">4F&5F Plan</p>
+                </div>
+                <div class="description-column">
+                    <a href="/projects/water/Model1.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Model1.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Structure Model 1</p>
+                    
+                    <a href="/projects/water/Model2.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Model2.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Structure Model 2</p>
+                    
+                    <a href="/projects/water/Persepctive0.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Persepctive0.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Persepctive: Entrance</p>
+
+                    <a href="/projects/water/Persepctive3.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Persepctive3.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Persepctive: The first floor</p>
+
+                    <div class="image-row">
+                        <a href="/projects/water/Persepctive1.jpg" data-fancybox="water_a" data-caption="">
+                            <img class="des-image-half" src="/projects/water/Persepctive1.jpg" alt="Image">
+                        </a>
+                        <a href="/projects/water/Persepctive2.jpg" data-fancybox="water_a" data-caption="">
+                            <img class="des-image-half" src="/projects/water/Persepctive2.jpg" alt="Image">
+                        </a>
+                    </div>
+                    <p class="description-text">Persepctive: Swimming pool</p>
+
+                    <a href="/projects/water/Persepctive4.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Persepctive4.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Persepctive: Badminton court</p>
+
+                    <a href="/projects/water/Persepctive5.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Persepctive5.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Persepctive: Club activity spaces</p>
+
+                    <a href="/projects/water/Persepctive6.jpg" data-fancybox="water_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/water/thumb/Persepctive6.jpg" alt="Image">
+                    </a>
+                    <p class="description-text">Persepctive: View from the second floor</p>
+                </div>
+            </div>
         </div>
-    
-        <!-- Neo-Tokyo's Haven 项目介绍 -->
-        <div class="description-container hidden" id="description2">
-            <h2>Neo-Tokyo's Haven</h2>
-            <img src="/projects/assets/thumb/image1.png" alt="Neo-Tokyo's Haven Image" />
-            <p>This project explores the design of urban shelters in Neo-Tokyo. It focuses on sustainability and urban resilience.</p>
-        </div>
-    </div>
     </div>
     <script src="open.js"></script>
     <script src="/projects/monitor.js"></script>
     <script src="/projects/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.fancybox.defaults.buttons = ['close'];
+            $.fancybox.defaults.caption = false;
+            $.fancybox.defaults.loop = true;
+            $("[data-fancybox]").fancybox({
+                touch: false,
+                baseClass: 'custom-fancybox',
+                afterShow: function(instance, current) {
+                    document.body.style.overflow = '';
+                },
+                afterClose: function(instance, current) {
+                    window.scrollTo(scrollPosition.left, scrollPosition.top);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

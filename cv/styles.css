@@ -13,7 +13,7 @@ body {
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
     cursor: none; /* 隐藏原始鼠标光标 */
     min-height: 100dvh;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -228,14 +228,13 @@ a:hover {
 
 /* 右侧栏样式 */
 .right-column {
+    position: relative;
     margin-left: 25%;
     margin-right: 10%;
     width: 80%;
     padding: 50px; /* 增加内边距 */
-    min-height: 100dvh;
-    overflow-y: scroll; /* 允许滚动 */
-    -ms-overflow-style: none; /* 适用于 Internet Explorer 和 Edge */
-    scrollbar-width: none; /* 隐藏 Firefox 浏览器的滚动条 */
+    height: 100dvh;
+    overflow-y: auto; /* 允许滚动 */
 }
 
 .right-column::-webkit-scrollbar {

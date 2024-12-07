@@ -48,51 +48,51 @@ specificLinks.forEach(link => {
 });
 
 function showDescription(descriptionId) {
-    // 隐藏项目列表
-    document.querySelector('.project-list').classList.remove('d-fade-in');
-    document.querySelector('.project-list').classList.add('d-fade-out');
-    document.getElementById('back').classList.add('d-fade-out');
-
-    // 隐藏所有描述内容
-    document.querySelectorAll('.description-container').forEach(description => {
-        description.classList.add('hidden');
-        description.classList.add('d-fade-out'); // 确保所有描述内容的 fade-in 类被移除
-    });
-
-    // 先移除 hidden 类，让元素变得可见，但不会立即触发过渡
+    // step1: 隐藏项目列表
+    const projectList = document.querySelector('.project-list');
+    projectList.classList.remove('d-fade-in');
+    projectList.classList.add('d-fade-out');
     setTimeout(() => {
-        document.getElementById('back').classList.remove('hidden');
-        
-        const descriptionElement = document.getElementById(descriptionId);
-        descriptionElement.classList.remove('hidden');
+        projectList.style.display = 'none';
+        document.querySelector('.right-column').style.overflow = 'hidden';
+        document.querySelector('.right-column').style.marginLeft = '15%';
+        document.querySelector('.right-column').style.width = '85%';
+    }, 500); // 动画过渡后关闭项目列表，修改属性
 
-        // 通过一个额外的短暂延迟，给浏览器时间应用显示后的状态，再触发渐入效果
-        setTimeout(() => {
-            document.getElementById('back').classList.remove('d-fade-out');
-            descriptionElement.classList.remove('d-fade-out');
-            descriptionElement.classList.add('d-fade-in');
-            document.getElementById('back').classList.add('d-fade-in');
-        }, 50); // 16ms ~ 50ms 是一帧的时间
-    }, 500);
+    // step2: 在上一步结束后开始显示描述内容
+    const descriptionElement = document.getElementById(descriptionId);
+    setTimeout(() => {
+        document.getElementById('back').classList.remove('d-fade-out');
+        document.getElementById('back').classList.add('d-fade-in');
+        descriptionElement.scrollIntoView({ behavior: 'auto', block: 'start' });
+        descriptionElement.classList.remove('hidden', 'd-fade-out');  // 恢复显示，移除动画
+        descriptionElement.classList.add('d-fade-in');  // 添加渐入动画
+    }, 500); // 确保与项目列表隐藏动画同步
 }
 
 function showAll() {
-    // 隐藏描述内容
+    // step1: 隐藏描述内容(先播动画)
     document.querySelectorAll('.description-container').forEach(description => {
         description.classList.remove('d-fade-in');
         description.classList.add('d-fade-out');
     });
-
     document.getElementById('back').classList.remove('d-fade-in');
     document.getElementById('back').classList.add('d-fade-out');
 
-    // 显示项目列表
     setTimeout(() => {
-        document.getElementById('back').classList.add('hidden');
-        document.querySelector('.project-list').classList.remove('d-fade-out');
-        document.querySelector('.project-list').classList.add('d-fade-in');
         document.querySelectorAll('.description-container').forEach(description => {
-            description.classList.add('hidden');
+            description.classList.add('hidden');  // 完全移除元素，避免占用空间
         });
-    }, 500);
+    }, 500); // 与渐出动画同步
+
+    // step2: 显示项目列表
+    const projectList = document.querySelector('.project-list');
+    projectList.style.display = 'block';  // 恢复显示项目列表
+    setTimeout(() => {
+        document.querySelector('.right-column').style.overflow ='auto';
+        document.querySelector('.right-column').style.marginLeft = '20%';
+        document.querySelector('.right-column').style.width = '80%';
+        projectList.classList.remove('d-fade-out');
+        projectList.classList.add('d-fade-in');
+    }, 500); // 播放动画
 }

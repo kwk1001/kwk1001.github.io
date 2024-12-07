@@ -14,7 +14,7 @@ body {
     background-color: #eee8d7; /* 设置整个页面背景颜色 */
     cursor: none; /* 隐藏原始鼠标光标 */
     min-height: 100dvh;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -238,10 +238,8 @@ a:hover {
     margin-left: 20%;
     width: 80%;
     padding: 50px; /* 增加内边距 */
-    min-height: 100dvh;
-    overflow-y: scroll; /* 允许滚动 */
-    -ms-overflow-style: none; /* 适用于 Internet Explorer 和 Edge */
-    scrollbar-width: none; /* 隐藏 Firefox 浏览器的滚动条 */
+    height: 100dvh;
+    overflow-y: auto; /* 允许滚动 */
 }
 
 .right-column::-webkit-scrollbar {
@@ -390,16 +388,7 @@ a:hover {
 }
 
 .hidden {
-    opacity: 0;
-}
-
-.description-container {
-    position: absolute;
-    top: 0; /* 靠近顶部 */
-    left: 0; /* 靠近左边 */
-    width: 80%; /* 你可以根据需要调整宽度 */
-    padding: 50px; /* 内边距，可根据需要调整 */
-    box-sizing: border-box; /* 确保内边距不会影响宽度计算 */
+    display: none;
 }
 
 .back-button {
@@ -415,6 +404,79 @@ a:hover {
     color: #555;
     border-bottom-color: #555;
     border-bottom: none; /* 移除下划线 */
+}
+
+.description-container {
+    position: absolute;
+    top: 0; /* 靠近顶部 */
+    left: 0; /* 靠近左边 */
+    width: 100%; /* 你可以根据需要调整宽度 */
+    height: 100%; /* 每列的固定高度 */
+    padding: 50px; /* 内边距，可根据需要调整 */
+    box-sizing: border-box; /* 确保内边距不会影响宽度计算 */
+    display: grid;
+    grid-template-columns: 18% 18% 60%; /* 三列宽 */
+    gap: 2%; /* 列间距 */
+}
+
+.description-column {
+    height: 100%; /* 每列的固定高度 */
+    overflow-y: auto;
+}
+
+.des-image-full {
+    width: 100%;
+}
+
+.description-column::-webkit-scrollbar {
+    width: 0; /* 禁用滚动条的显示 */
+    height: 0;
+}
+
+.description-column::-webkit-scrollbar-track {
+    background: transparent; /* 滚动条轨道 */
+}
+
+.description-column::-webkit-scrollbar-thumb {
+    background: transparent; /* 滚动条滑块 */
+}
+
+.fancybox-bg {
+    background: rgba(238, 232, 215, 1)
+}
+
+.right-column .description-text{
+    font-size: 0.8em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.right-column .left-text{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.right-column .left-text-small {
+    font-size: 0.2em;
+    font-weight: 300;
+}
+
+.right-column .title {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列等分 */
+    gap: 20px; /* 图片之间的间距 */
+}
+
+.des-image-half {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* 手机端（小于768px屏幕宽度）的自定义样式 */
