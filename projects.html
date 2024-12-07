@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weikang Kong | Projects</title>
-    <link rel="stylesheet" href="/projects/styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/projects/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .fancybox-bg {background: rgba(238, 232, 215, 1) !important;}
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJKS9GP9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-MJKS9GP9');
+    </script>
+    <script>document.addEventListener('DOMContentLoaded', function() {animationStartTime = performance.now();animate();});</script>
+    <script>
+        window.onload = function() {
+        const hash = window.location.hash;
+        if (hash) {
+          const descriptionId = hash.substring(1);
+          showDescription(descriptionId);
+          history.replaceState(null, '', window.location.pathname);
+        }
+      };
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJKS9GP9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'GT-MJKS9GP9');
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        animationStartTime = performance.now();
-        animate();
-    });
-</script>
-<script>
-    window.onload = function() {
-    const hash = window.location.hash;
-    if (hash) {
-      const descriptionId = hash.substring(1);
-      showDescription(descriptionId);
-      history.replaceState(null, '', window.location.pathname);
-    }
-  };
-</script>
 <body>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999;display: block;"></div>
     <div id="overlay2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #eee8d7; z-index: 999; opacity: 0; display: none;"></div>
@@ -311,11 +305,11 @@
             </div>
         </div>
     </div>
-    <script src="open.js"></script>
-    <script src="/projects/monitor.js"></script>
-    <script src="/projects/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+    <script src="open.js" defer></script>
+    <script src="/projects/monitor.js" defer></script>
+    <script src="/projects/script.js" defer></script>
     <script>
         $(document).ready(function() {
             $.fancybox.defaults.buttons = ['close'];
