@@ -23,3 +23,27 @@ document.getElementById('water_read').addEventListener('click', function() {
         'value': 1
     });
 });
+
+document.getElementById('UHI_read').addEventListener('click', function() {
+    gtag('event', 'UHI_read', {
+        'event_category': 'read',
+        'event_label': 'UHI_read',
+        'value': 1
+    });
+});
+
+document.getElementById('Tuan_read').addEventListener('click', function() {
+    gtag('event', 'Tuan_read', {
+        'event_category': 'read',
+        'event_label': 'Tuan_read',
+        'value': 1
+    });
+});
+
+document.getElementById('Origami_read').addEventListener('click', function() {
+    gtag('event', 'Origami_read', {
+        'event_category': 'read',
+        'event_label': 'Origami_read',
+        'value': 1
+    });
+});
