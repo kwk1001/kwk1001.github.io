@@ -468,6 +468,12 @@ a:hover {
     font-weight: 300;
 }
 
+.right-column .left-text-small strong {
+    font-size: inherit;
+    font-weight: inherit;
+    font-weight: 600;
+}
+
 .right-column .title {
     font-size: 1.4em;
     font-weight: 500;
