@@ -171,7 +171,8 @@ a:hover {
     font-weight: 600;
     text-decoration: none;
     color: #333;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    letter-spacing: -0.06em;
 }
 
 .left-column .header a{
