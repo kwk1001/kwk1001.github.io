@@ -393,7 +393,7 @@ a:hover {
 }
 
 .back-button {
-    font-size: 0.8em; /* Increase font size for better visibility */
+    font-size: 0.9vw; /* Increase font size for better visibility */
     font-weight: 400;
     color: #333;
     border-bottom: 1px solid #333; /* Add underline with padding */
@@ -453,18 +453,18 @@ a:hover {
 }
 
 .right-column .description-text{
-    font-size: 0.8em;
+    font-size: 0.6vw;
     font-weight: 400;
     margin-bottom: 20px;
 }
 
 .right-column .left-text{
-    font-size: 1.2em;
+    font-size: 0.9vw;
     font-weight: 300;
 }
 
 .right-column .left-text-small {
-    font-size: 0.2em;
+    font-size: 0.6vw;
     font-weight: 300;
 }
 
@@ -475,7 +475,7 @@ a:hover {
 }
 
 .right-column .title {
-    font-size: 1.4em;
+    font-size: 1.1vw;
     font-weight: 500;
     margin-bottom: 40px;
 }

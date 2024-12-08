@@ -423,12 +423,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
     <script>
         $(document).ready(function() {
-            $.fancybox.defaults.buttons = ['close']; // 设置全局按钮
-            $.fancybox.defaults.caption = false; // 设置全局标题
-
+            $.fancybox.defaults.buttons = ['close'];
+            $.fancybox.defaults.caption = false;
+    
+            let scrollPosition = { top: 0, left: 0 };
             $("[data-fancybox]").fancybox({
                 touch: false,
                 baseClass: 'custom-fancybox',
+                beforeShow: function(instance, current) {
+                    scrollPosition.left = window.pageXOffset || document.documentElement.scrollLeft;
+                    scrollPosition.top = window.pageYOffset || document.documentElement.scrollTop;
+                },
                 afterShow: function(instance, current) {
                     document.body.style.overflow = '';
                 },
