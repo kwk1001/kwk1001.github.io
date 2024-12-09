@@ -47,3 +47,11 @@ document.getElementById('Origami_read').addEventListener('click', function() {
         'value': 1
     });
 });
+
+document.getElementById('Pedestrian_read').addEventListener('click', function() {
+    gtag('event', 'Pedestrian_read', {
+        'event_category': 'read',
+        'event_label': 'Pedestrian_read',
+        'value': 1
+    });
+});
