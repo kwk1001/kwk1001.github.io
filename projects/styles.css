@@ -486,6 +486,13 @@ a:hover {
     gap: 20px; /* 图片之间的间距 */
 }
 
+.image-row3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 两列等分 */
+    gap: 10px; /* 图片之间的间距 */
+    margin-bottom: 5px;
+}
+
 .des-image-half {
     width: 100%;
     height: auto;
