@@ -63,3 +63,11 @@ document.getElementById('steps_read').addEventListener('click', function() {
         'value': 1
     });
 });
+
+document.getElementById('parcel_read').addEventListener('click', function() {
+    gtag('event', 'parcel_read', {
+        'event_category': 'read',
+        'event_label': 'parcel_read',
+        'value': 1
+    });
+});

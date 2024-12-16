@@ -376,6 +376,43 @@ a:hover {
     margin: 0px 0;
 }
 
+.caption_b {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 20px;
+    color: #2b2b2b;
+    padding: 12px;
+    z-index: 1; /* 确保文字在图片之上 */
+}
+
+.caption_b a{
+    color: #2b2b2b;
+    text-decoration: underline 1px; /* 给所有行加下划线 */
+    text-decoration-skip-ink: none; /* 确保下划线完整 */
+    text-underline-offset: 3px;
+}
+
+.caption_b a:hover, h4:hover
+{
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+.caption_b .date {
+    font-size: 0.8vw;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.caption_b h4 {
+    font-size: 1.2vw;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0px 0;
+}
+
+
 .d-fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
