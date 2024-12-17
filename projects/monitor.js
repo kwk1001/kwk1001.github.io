@@ -79,3 +79,11 @@ document.getElementById('waving_read').addEventListener('click', function() {
         'value': 1
     });
 });
+
+document.getElementById('restaurant_read').addEventListener('click', function() {
+    gtag('event', 'restaurant_read', {
+        'event_category': 'read',
+        'event_label': 'restaurant_read',
+        'value': 1
+    });
+});
