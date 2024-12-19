@@ -87,3 +87,11 @@ document.getElementById('restaurant_read').addEventListener('click', function() 
         'value': 1
     });
 });
+
+document.getElementById('xinjiangwan_read').addEventListener('click', function() {
+    gtag('event', 'xinjiangwan_read', {
+        'event_category': 'read',
+        'event_label': 'xinjiangwan_read',
+        'value': 1
+    });
+});
