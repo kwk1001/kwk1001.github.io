@@ -75,6 +75,28 @@
             <div class="project-list">
                 <h3 class="fade-row">Research</h3>
                 <div class="projects fade-row">
+
+                    <!-- PlanGPT -->
+                    <div class="project">
+                        <div class="image-container">
+                            <div class="image-border">
+                                <div class="image-frame" style="background-image: url('/projects/GPT/thumb/PlanGPT_Demo.gif'); filter: saturate(0.6);"></div>
+                            </div>
+                            <div class="corners">
+                                <div class="corner top-left" style="top: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
+                                <div class="corner top-right" style="top: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-top: 2px solid var(--color-cornor);"></div>
+                                <div class="corner bottom-left" style="bottom: 0px; left: 0px; border-left: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
+                                <div class="corner bottom-right" style="bottom: 0px; right: 0px; border-right: 2px solid var(--color-cornor); border-bottom: 2px solid var(--color-cornor);"></div>
+                            </div>
+                            <div class="caption">
+                                <a onclick="showDescription('GPT')" id="GPT_read">
+                                    <span class="date">07/2025</span>
+                                    <h4>PlanGPT: Know Your Urban Design</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Mobility Justice -->
                     <div class="project">
                         <div class="image-container">
@@ -89,8 +111,8 @@
                             </div>
                             <div class="caption">
                                 <a onclick="showDescription('scooter')" id="scooter_read">
-                                    <span class="date">12/2023 - Present</span>
-                                    <h4>Mobility Justice: <br>Rethink Scooter Bans (in progress)</h4>
+                                    <span class="date">12/2023 - 06/2025</span>
+                                    <h4>Mobility Justice: <br>Rethink Scooter Bans</h4>
                                 </a>
                             </div>
                         </div>
@@ -317,6 +339,40 @@
                 </div>
             </div>
 
+            <!-- PlanGPT -->
+            <div class="description-container d-fade-out hidden" id="GPT" style="grid-template-columns: 40% 58%;">
+                <div class="description-column">
+                    <p class="title">PlanGPT: Know Your Urban Design</p>
+                    <p class="left-text">This project was developed during the AI4CITIES Workshop at Tongji University (Summer 2025). Our goal was to explore how multimodal AI models could deepen the understanding of urban design, enabling machines to interpret city plans with spatial, visual, and conceptual awareness.
+                        <br><br>
+                        The work began with a simple but crucial question: in the age of large language models, can AI truly “read” a city? Existing general models often lack spatial reasoning and domain knowledge. Their analyses remain surface-level, unable to grasp the layered relationships that shape urban space. To address these challenges, we built our own training framework and fine-tuned a domain-specific model, PlanGPT-VL, based on Qwen-7B with guidance from a 32B teacher model.
+                        <br><br>
+                        Our team worked along two parallel tracks—data and technical development—closely connected throughout the process. The data track focused on building a benchmark for urban design cognition, collecting a wide range of master plans and competition projects, and structuring them into a six-level, eighteen-dimension evaluation system. The technical track developed a full multimodal training workflow integrating Critical Point Thinking (CPT) to improve reasoning depth and stability. Through this iterative process, we linked datasets, prompts, and evaluation metrics into a complete, reproducible pipeline.
+                        <br><br>
+                        The fine-tuned PlanGPT-VL achieved clear improvements over the baseline models in both recognition and interpretation of urban design drawings, especially in understanding spatial hierarchy, design intent, and form language. The results suggest promising applications in automated design review, public communication, and architectural education.
+                        <br><br>
+                        I also had the opportunity to lead our group presentation, sharing how the model connects AI reasoning with the human process of reading and judging design. It was an inspiring collaboration that revealed how intelligent systems might one day participate in the creative and analytical practices of urbanism.</p>
+                    <p class="left-text-small"><br><br><br><br></p>
+                    <p class="left-text-small"><strong>Time:</strong> 07/2025</p>
+                    <p class="left-text-small"><strong>Authors:</strong> <strong>Weikang Kong</strong>, Shao Yuchen, Yang Yuchen, Qiao Nenghuan, Jiang Yating, Guo Hanzhe, Pu Zhengsheng, Zheng Hongzhou, Yu Jialu, Wang Tianyi, An Fenghong, Cha Siqi, Chen Minxin, Zhu He</p>
+                    <p class="left-text-small"><strong>Supervisor:</strong> Prof. Xiansheng Hua - Tongji University / Alibaba<br>Prof. Wenjia Zhang - Tongji University<br>Dr. Shuxian Liang - Tongji University / Alibaba</p>
+                </div>
+                <div class="description-column">
+                    <a href="/projects/GPT/thumb/PlanGPT_Demo.gif" data-fancybox="GPT_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/GPT/thumb/PlanGPT_Demo.gif" alt="Image" loading="lazy">
+                    </a>
+                    <p class="description-text">Display Demo</p>
+                    <a href="/projects/GPT/thumb/Workflow.jpg" data-fancybox="GPT_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/GPT/Workflow.jpg" alt="Image" loading="lazy">
+                    </a>
+                    <p class="description-text">Overall workflow</p>
+                    <a href="/projects/GPT/thumb/photo1.jpg" data-fancybox="GPT_a" data-caption="">
+                        <img class = "des-image-full" src="/projects/GPT/photo1.jpg" alt="Image" loading="lazy">
+                    </a>
+                    <p class="description-text">My presentation</p>
+                </div>
+            </div>
+
             <!-- Mobility Scooter -->
             <div class="description-container d-fade-out hidden" id="scooter" style="grid-template-columns: 40% 58%;">
                 <div class="description-column">
@@ -376,18 +432,19 @@
                     <a href="/projects/UHI/UHI-1.jpg" data-fancybox="UHI_a" data-caption="">
                         <img class = "des-image-full" src="/projects/UHI/thumb/UHI-1.jpg" alt="Image" loading="lazy">
                     </a>
-                    <p class="description-text">Urban heat island effect in Shanghai</p>
+                    <p class="description-text">Introduction</p>
                     <a href="/projects/UHI/UHI-2.jpg" data-fancybox="UHI_a" data-caption="">
                         <img class = "des-image-full" src="/projects/UHI/thumb/UHI-2.jpg" alt="Image" loading="lazy">
                     </a>
-                    <p class="description-text">Urban heat island effect in Shanghai</p>
+                    <p class="description-text">2D and 3D indicators for modeling urban heat island effect</p>
                     <a href="/projects/UHI/UHI-3.jpg" data-fancybox="UHI_a" data-caption="">
                         <img class = "des-image-full" src="/projects/UHI/thumb/UHI-3.jpg" alt="Image" loading="lazy">
                     </a>
-                    <p class="description-text">Urban heat island effect in Shanghai</p>
+                    <p class="description-text">Modeling and analysis with explainable AI</p>
                     <a href="/projects/UHI/UHI-4.jpg" data-fancybox="UHI_a" data-caption="">
                         <img class = "des-image-full" src="/projects/UHI/thumb/UHI-4.jpg" alt="Image" loading="lazy">
                     </a>
+                    <p class="description-text">Urban Heat Monitoring and Design Evaluation Tool</p>
                 </div>
             </div>
 
