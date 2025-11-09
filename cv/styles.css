@@ -312,19 +312,79 @@ a:hover {
 }
 
 /* 手机端（小于768px屏幕宽度）的自定义样式 */
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 768px) {
     /* 针对手机的样式设置 */
+    body {
+        overflow-y: auto; 
+        padding-top: 60px; 
+        min-height: 0; 
+    }
     .left-column {
-        width: 0%;
+        /* * 这是关键：将导航栏固定在顶部 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 0;
+        height: auto; /* 高度自动 */
+        display: block;
+        padding: 15px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow-y: none; 
+    }
+    .left-column .tit {
+        display: none;
+    }
+
+    /* 居中链接区域 */
+    .left-column .header {
+        position: relative;
+        text-align: center;
+        line-height: 1.5;
+        background-color: #eee8d7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 隐藏所有链接... */
+    .left-column .header .links {
+        display: none;
+    }
+
+    .left-column .header .links:nth-child(2),
+    .left-column .header .links:nth-child(3) {
+        display: inline-block; /* 让它们水平排列 */
+        margin: 0 10px;      /* 给链接之间一点间距 */
+    }
+
+    /* 居中返回按钮区域 */
+    .left-column .footer {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* 调整返回按钮的样式和字体 */
+    .left-column .footer .back-button {
+        display: inline-block; /* 允许居中 */
+        font-size: 16px;       /* 调大字体 */
+        font-weight: 500;
+    }
+
+    /* 隐藏所有不必要的 <br> 和 "Projects" 文字 */
+    .left-column .header p:first-child,
+    .left-column .footer br,
+    .left-column .footer p {
         display: none;
     }
     
     .right-column {
         margin-left: 0%;
-        width: 100%;
+        width: 100% !important;
+        margin-right: 0%;
         padding: 50px; /* 增加内边距 */
         overflow-y: scroll;
         height: 100dvh;
+        padding-top: 0px !important; 
     }
 
     .cv-content .left-col{
